@@ -1923,7 +1923,7 @@ class spec_class {
 
     /** Logs a normal message. */
     log(message) {
-        console.log(message);
+        //console.log(message);
 
     }
 
