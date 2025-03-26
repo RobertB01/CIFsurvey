@@ -1,0 +1,312 @@
+plant automaton RB:
+  uncontrollable u_press;
+  uncontrollable u_release;
+  location Released:
+    initial;
+    marked;
+    edge u_press goto Pressed;
+  location Pressed:
+    edge u_release goto Released;
+end
+plant automaton FB:
+  uncontrollable u_press;
+  uncontrollable u_release;
+  location Released:
+    initial;
+    marked;
+    edge u_press goto Pressed;
+  location Pressed:
+    edge u_release goto Released;
+end
+plant automaton BB:
+  uncontrollable u_press;
+  uncontrollable u_release;
+  location Released:
+    initial;
+    marked;
+    edge u_press goto Pressed;
+  location Pressed:
+    edge u_release goto Released;
+end
+plant automaton RL:
+  controllable c_on;
+  controllable c_off;
+  alg bool startsWithOn = true;
+  location Off:
+    initial not startsWithOn;
+    marked not startsWithOn;
+    edge c_on goto On;
+  location On:
+    initial startsWithOn;
+    marked startsWithOn;
+    edge c_off goto Off;
+end
+plant automaton FL:
+  controllable c_on;
+  controllable c_off;
+  alg bool startsWithOn = false;
+  location Off:
+    initial not startsWithOn;
+    marked not startsWithOn;
+    edge c_on goto On;
+  location On:
+    initial startsWithOn;
+    marked startsWithOn;
+    edge c_off goto Off;
+end
+plant automaton BL:
+  controllable c_on;
+  controllable c_off;
+  alg bool startsWithOn = false;
+  location Off:
+    initial not startsWithOn;
+    marked not startsWithOn;
+    edge c_on goto On;
+  location On:
+    initial startsWithOn;
+    marked startsWithOn;
+    edge c_off goto Off;
+end
+plant automaton BS:
+  uncontrollable u_active;
+  uncontrollable u_inactive;
+  location Inactive:
+    initial;
+    marked;
+    edge u_active goto Active;
+  location Active:
+    edge u_inactive goto Inactive;
+end
+plant automaton FLP:
+  uncontrollable u_active;
+  uncontrollable u_inactive;
+  location Inactive:
+    initial;
+    marked;
+    edge u_active goto Active;
+  location Active:
+    edge u_inactive goto Inactive;
+end
+plant automaton BLP:
+  uncontrollable u_active;
+  uncontrollable u_inactive;
+  location Inactive:
+    initial;
+    marked;
+    edge u_active goto Active;
+  location Active:
+    edge u_inactive goto Inactive;
+end
+plant automaton FSP:
+  uncontrollable u_active;
+  uncontrollable u_inactive;
+  location Inactive:
+    initial;
+    marked;
+    edge u_active goto Active;
+  location Active:
+    edge u_inactive goto Inactive;
+end
+plant automaton BSP:
+  uncontrollable u_active;
+  uncontrollable u_inactive;
+  location Inactive:
+    initial;
+    marked;
+    edge u_active goto Active;
+  location Active:
+    edge u_inactive goto Inactive;
+end
+plant automaton BA:
+  uncontrollable u_OK;
+  uncontrollable u_Empty;
+  location OK:
+    initial;
+    marked;
+    edge u_Empty goto Empty;
+  location Empty:
+    edge u_OK goto OK;
+end
+plant automaton RideControl:
+  uncontrollable u_stop;
+  uncontrollable u_start;
+  location Stop:
+    edge u_start goto Start;
+    edge u_stop;
+  location Start:
+    initial;
+    marked;
+    edge u_stop goto Stop;
+    edge u_start;
+end
+plant automaton SH:
+  controllable c_enable;
+  controllable c_disable;
+  uncontrollable u_error;
+  uncontrollable u_chdir;
+  location Off:
+    initial;
+    marked;
+    edge c_enable goto On;
+  location On:
+    edge u_chdir;
+    edge u_error;
+    edge c_disable goto Off;
+end
+plant automaton SM:
+  controllable c_enable;
+  controllable c_disable;
+  uncontrollable u_error;
+  location Off:
+    initial;
+    marked;
+    edge c_enable goto On;
+  location On:
+    edge u_error goto Off;
+    edge c_disable goto Off;
+end
+plant automaton DM:
+  controllable c_fw;
+  controllable c_fwslow;
+  controllable c_fwstop;
+  controllable c_bw;
+  controllable c_bwslow;
+  controllable c_bwstop;
+  controllable c_stop;
+  controllable c_enable_fw;
+  controllable c_enable_bw;
+  uncontrollable u_error;
+  uncontrollable u_disable;
+  location Off:
+    initial;
+    marked;
+    edge c_enable_fw goto On;
+    edge c_enable_bw goto On;
+    edge c_stop goto Stopping;
+  location On:
+    edge c_fw;
+    edge c_fwslow;
+    edge c_fwstop;
+    edge c_bw;
+    edge c_bwslow;
+    edge c_bwstop;
+    edge c_stop goto Stopping;
+    edge u_error goto Off;
+  location Stopping:
+    edge u_error goto Off;
+    edge u_disable goto Off;
+end
+plant automaton MM:
+  controllable c_reset;
+  controllable c_active;
+  controllable c_emergency;
+  location Reset:
+    marked;
+    edge c_active goto Active;
+    edge c_emergency goto Emergency;
+  location Active:
+    edge c_reset goto Reset;
+    edge c_emergency goto Emergency;
+  location Emergency:
+    initial;
+    edge c_reset goto Reset;
+end
+supervisor automaton emergencyHandler:
+  monitor DM.u_error, SH.u_error, SM.u_error;
+  location noError:
+    initial;
+    marked;
+    edge DM.u_error goto Emergency;
+    edge SH.u_error goto Emergency;
+    edge SM.u_error goto Emergency;
+    edge MM.c_reset;
+    edge MM.c_emergency;
+    edge MM.c_active;
+    edge DM.c_enable_fw;
+    edge DM.c_enable_bw;
+  location Emergency:
+    edge MM.c_emergency goto Stopped;
+  location Stopped:
+    edge MM.c_reset goto noError;
+end
+supervisor automaton onlyOneButtonAtATime:
+  monitor RB.u_release, FB.u_release, BB.u_release, BB.u_press, FB.u_press, RB.u_press;
+  location noActiveButton:
+    initial;
+    marked;
+    edge RB.u_press goto selectReset;
+    edge FB.u_press goto selectForward;
+    edge BB.u_press goto selectBackward;
+  location selectReset:
+    edge RB.u_release goto noActiveButton;
+  location selectForward:
+    edge FB.u_release goto noActiveButton;
+  location selectBackward:
+    edge BB.u_release goto noActiveButton;
+end
+supervisor automaton resetTracker:
+  location canReset:
+    marked;
+    edge MM.c_reset;
+    edge MM.c_active goto canNotResetYet;
+    edge MM.c_emergency goto canNotResetYet;
+    edge RB.u_press;
+  location canNotResetYet:
+    initial;
+    edge MM.c_emergency;
+    edge RB.u_press goto canReset;
+end
+supervisor automaton operator:
+  monitor DM.c_enable_fw, DM.c_enable_bw, DM.c_stop, DM.u_error, DM.u_disable;
+  location still:
+    initial;
+    marked;
+    edge DM.c_enable_fw goto forward;
+    edge DM.c_enable_bw goto backward;
+    edge FL.c_off;
+    edge BL.c_off;
+  location forward:
+    edge DM.c_stop goto still;
+    edge FL.c_on;
+    edge DM.c_fw;
+    edge DM.c_fwslow;
+    edge BL.c_off;
+    edge DM.u_error goto still;
+    edge DM.u_disable goto still;
+  location backward:
+    edge DM.c_stop goto still;
+    edge BL.c_on;
+    edge FL.c_off;
+    edge DM.c_bw;
+    edge DM.c_bwslow;
+    edge DM.u_error goto still;
+    edge DM.u_disable goto still;
+end
+supervisor automaton sup:
+  alphabet RL.c_on, RL.c_off, FL.c_on, FL.c_off, BL.c_on, BL.c_off, SH.c_enable, SH.c_disable, SM.c_enable, SM.c_disable, DM.c_enable_fw, DM.c_enable_bw, DM.c_stop, DM.c_fw, DM.c_fwslow, DM.c_fwstop, DM.c_bw, DM.c_bwslow, DM.c_bwstop, MM.c_active, MM.c_emergency, MM.c_reset;
+  location:
+    initial;
+    marked;
+    edge BL.c_off when true;
+    edge BL.c_on when true and MM.Active;
+    edge DM.c_bw when true and (FSP.Inactive and BSP.Inactive) and (not MM.Emergency and emergencyHandler.noError) and BLP.Inactive;
+    edge DM.c_bwslow when true and (FSP.Inactive and BSP.Inactive) and (not MM.Emergency and emergencyHandler.noError);
+    edge DM.c_bwstop when true and (FSP.Inactive and BSP.Inactive) and (not MM.Emergency and emergencyHandler.noError);
+    edge DM.c_enable_bw when true and (MM.Active and BA.OK) and onlyOneButtonAtATime.selectBackward and not(FSP.Active or BSP.Active);
+    edge DM.c_enable_fw when true and (MM.Active and BA.OK) and onlyOneButtonAtATime.selectForward and not(FSP.Active or BSP.Active);
+    edge DM.c_fw when true and (FSP.Inactive and BSP.Inactive) and (not MM.Emergency and emergencyHandler.noError) and FLP.Inactive;
+    edge DM.c_fwslow when true and (FSP.Inactive and BSP.Inactive) and (not MM.Emergency and emergencyHandler.noError);
+    edge DM.c_fwstop when true and (FSP.Inactive and BSP.Inactive) and (not MM.Emergency and emergencyHandler.noError);
+    edge DM.c_stop when not emergencyHandler.noError or not MM.Emergency;
+    edge FL.c_off when true;
+    edge FL.c_on when true and MM.Active;
+    edge MM.c_active when true and RL.Off and (DM.Off and SM.Off and BA.OK) and (BS.Inactive and BA.OK);
+    edge MM.c_emergency when SM.Off and not emergencyHandler.Emergency and (DM.Off and SH.Off) or (SM.Off and emergencyHandler.Emergency or SM.On and emergencyHandler.Emergency);
+    edge MM.c_reset when true and (DM.Off and SM.Off and BA.OK);
+    edge RL.c_off when true and MM.Reset;
+    edge RL.c_on when true and MM.Emergency;
+    edge SH.c_disable when true;
+    edge SH.c_enable when true and (MM.Active and BA.OK) and (FSP.Inactive and BSP.Inactive) and (not MM.Emergency and emergencyHandler.noError);
+    edge SM.c_disable when true;
+    edge SM.c_enable when true and (MM.Active and BA.OK) and (FSP.Inactive and BSP.Inactive) and (not MM.Emergency and emergencyHandler.noError);
+end

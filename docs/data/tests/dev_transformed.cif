@@ -1,0 +1,42 @@
+uncontrollable insertCoin;
+uncontrollable returnCoin;
+uncontrollable select90;
+uncontrollable select40;
+uncontrollable refill;
+controllable openDoor;
+controllable dispense;
+automaton washer:
+  location ready:
+    initial;
+    marked;
+    edge openDoor goto ready;
+    edge select40 when coin_collector.coins = 2 and detergent_dispenser.full goto washAt40;
+    edge select90 when coin_collector.coins = 3 and detergent_dispenser.full goto washAt90;
+  location washAt90:
+    edge dispense goto washing90;
+  location washing90:
+    edge openDoor goto ready;
+  location washAt40:
+    edge dispense goto washing40;
+  location washing40:
+    edge openDoor goto ready;
+end
+automaton detergent_dispenser:
+  location isEmpty:
+    initial;
+    marked;
+    edge refill goto full;
+  location full:
+    marked;
+    edge dispense goto isEmpty;
+end
+automaton coin_collector:
+  disc int coins = 0;
+  location:
+    initial;
+    marked;
+    edge select40 when coins > 0 do coins := 0;
+    edge select90 when coins > 3 do coins := 0;
+    edge insertCoin do coins := coins + 1;
+    edge returnCoin when coins > 0 do coins := coins - 1;
+end

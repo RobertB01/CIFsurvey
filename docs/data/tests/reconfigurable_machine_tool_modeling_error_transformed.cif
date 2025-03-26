@@ -1,0 +1,109 @@
+automaton conveyor:
+  uncontrollable enterConveyor;
+  uncontrollable leaveConveyor;
+  location noProduct:
+    initial;
+    marked;
+    edge enterConveyor goto productPresent;
+  location productPresent:
+    edge leaveConveyor goto noProduct;
+end
+automaton machineStand:
+  uncontrollable moveDown;
+  uncontrollable moveUp;
+  location up:
+    initial;
+    marked;
+    edge moveDown goto down;
+  location down:
+    edge moveUp goto up;
+end
+automaton machineHead:
+  uncontrollable M2D;
+  uncontrollable D2M;
+  uncontrollable D2P;
+  uncontrollable P2D;
+  uncontrollable M2P;
+  uncontrollable P2M;
+  location opD:
+    initial;
+    marked;
+    edge D2M goto opM;
+    edge D2P goto opP;
+  location opM:
+    edge M2D goto opD;
+    edge M2P goto opP;
+  location opP:
+    edge P2D goto opD;
+    edge P2M goto opM;
+end
+automaton drill:
+  uncontrollable startDrill;
+  uncontrollable stopDrill;
+  location off:
+    initial;
+    marked;
+    edge startDrill goto on;
+  location on:
+    edge stopDrill goto off;
+end
+automaton mill:
+  uncontrollable startMill;
+  uncontrollable stopMill;
+  location off:
+    initial;
+    marked;
+    edge startMill goto on;
+  location on:
+    edge stopMill goto off;
+end
+automaton polisher:
+  uncontrollable startPolisher;
+  uncontrollable stopPolisher;
+  location off:
+    initial;
+    marked;
+    edge startPolisher goto on;
+  location on:
+    edge stopPolisher goto off;
+end
+requirement automaton r_C:
+  location a:
+    initial;
+    marked;
+    edge machineStand.moveDown goto b;
+  location b:
+    edge machineStand.moveUp goto a;
+    edge mill.startMill goto c;
+    edge drill.startDrill goto d;
+    edge polisher.startPolisher goto e;
+  location c:
+    edge mill.stopMill goto b;
+  location d:
+    edge drill.stopDrill goto b;
+  location e:
+    edge polisher.stopPolisher goto b;
+end
+supervisor automaton r_A:
+  location a:
+    initial;
+    marked;
+    edge conveyor.enterConveyor goto b;
+  location b:
+    edge machineStand.moveDown;
+    edge conveyor.leaveConveyor goto a;
+end
+requirement automaton r_B:
+  location a:
+    edge mill.startMill;
+    edge machineHead.M2D goto b;
+  location b:
+    initial;
+    marked;
+    edge drill.startDrill;
+    edge machineHead.D2M goto a;
+    edge machineHead.D2P goto c;
+  location c:
+    edge polisher.startPolisher;
+    edge machineHead.P2D goto b;
+end

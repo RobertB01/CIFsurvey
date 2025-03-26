@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitor and Event Parser</title>
+</head>
+
+<script type="text/javascript" src="../data/examples/button_lamp.js"></script>
+<!-- <script type="text/javascript" src="../data/tests/conveyerbelt.js"></script> -->
+<script type="text/javascript" src="xmltojson.js"></script>
+
+
+
+<body>
+
+    <!-- EXECUTION -->
+    <script>
+        // const parsedData = parseCIFXML(xml_conveyerbelt);
+        const parsedData = parseCIFXML(xml_button_lamp);
+        console.log("XML is parsed");
+        console.log(parsedData);
+    </script>
+
+</body>
+
+</html>

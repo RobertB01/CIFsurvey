@@ -1,0 +1,545 @@
+controllable TRtoSUB_0_s;
+controllable SUBtoUR_0_s;
+controllable URtoSUB_0_s;
+controllable URtoDU_0_s;
+controllable URtoPA_0_s;
+controllable URtoCTC1_0_s;
+controllable PAtoUR_0_s;
+controllable PAtoLR_0_s;
+controllable LRtoDU_0_s;
+controllable LRtoPA_0_s;
+controllable LRtoCH0_0_s;
+controllable LRtoCH1_0_s;
+controllable LRtoCTC0_0_s;
+controllable DUtoUR_0_s;
+controllable DUtoLR_0_s;
+controllable DUtoTR_0_s;
+controllable CH0toLR_0_s;
+controllable CH0toUR_0_s;
+controllable CH1toLR_0_s;
+controllable CH1toUR_0_s;
+controllable CTC0toLR_0_s;
+controllable CTC1toUR_0_s;
+controllable SUB_Condition_0_s;
+controllable PA_Align_0_s;
+controllable CH0_Measure_0_s;
+controllable CH0_Expose_0_s;
+controllable CH1_Measure_0_s;
+controllable CH1_Expose_0_s;
+uncontrollable TRtoSUB_0_e;
+uncontrollable SUBtoUR_0_e;
+uncontrollable URtoSUB_0_e;
+uncontrollable URtoDU_0_e;
+uncontrollable URtoPA_0_e;
+uncontrollable URtoCTC1_0_e;
+uncontrollable PAtoUR_0_e;
+uncontrollable PAtoLR_0_e;
+uncontrollable LRtoDU_0_e;
+uncontrollable LRtoPA_0_e;
+uncontrollable LRtoCH0_0_e;
+uncontrollable LRtoCH1_0_e;
+uncontrollable LRtoCTC0_0_e;
+uncontrollable DUtoUR_0_e;
+uncontrollable DUtoLR_0_e;
+uncontrollable DUtoTR_0_e;
+uncontrollable CH0toLR_0_e;
+uncontrollable CH0toUR_0_e;
+uncontrollable CH1toLR_0_e;
+uncontrollable CH1toUR_0_e;
+uncontrollable CTC0toLR_0_e;
+uncontrollable CTC1toUR_0_e;
+uncontrollable SUB_Condition_0_e;
+uncontrollable PA_Align_0_e;
+uncontrollable CH0_Measure_0_e;
+uncontrollable CH0_Expose_0_e;
+uncontrollable CH1_Measure_0_e;
+uncontrollable CH1_Expose_0_e;
+uncontrollable assignCH0_0;
+uncontrollable assignCH1_0;
+uncontrollable assignCH0orCH1_0;
+controllable TRtoSUB_2_s;
+controllable SUBtoUR_2_s;
+controllable URtoSUB_2_s;
+controllable URtoDU_2_s;
+controllable URtoPA_2_s;
+controllable URtoCTC1_2_s;
+controllable PAtoUR_2_s;
+controllable PAtoLR_2_s;
+controllable LRtoDU_2_s;
+controllable LRtoPA_2_s;
+controllable LRtoCH0_2_s;
+controllable LRtoCH1_2_s;
+controllable LRtoCTC0_2_s;
+controllable DUtoUR_2_s;
+controllable DUtoLR_2_s;
+controllable DUtoTR_2_s;
+controllable CH0toLR_2_s;
+controllable CH0toUR_2_s;
+controllable CH1toLR_2_s;
+controllable CH1toUR_2_s;
+controllable CTC0toLR_2_s;
+controllable CTC1toUR_2_s;
+controllable PA_Align_2_s;
+uncontrollable TRtoSUB_2_e;
+uncontrollable SUBtoUR_2_e;
+uncontrollable URtoSUB_2_e;
+uncontrollable URtoDU_2_e;
+uncontrollable URtoPA_2_e;
+uncontrollable URtoCTC1_2_e;
+uncontrollable PAtoUR_2_e;
+uncontrollable PAtoLR_2_e;
+uncontrollable LRtoDU_2_e;
+uncontrollable LRtoPA_2_e;
+uncontrollable LRtoCH0_2_e;
+uncontrollable LRtoCH1_2_e;
+uncontrollable LRtoCTC0_2_e;
+uncontrollable DUtoUR_2_e;
+uncontrollable DUtoLR_2_e;
+uncontrollable DUtoTR_2_e;
+uncontrollable CH0toLR_2_e;
+uncontrollable CH0toUR_2_e;
+uncontrollable CH1toLR_2_e;
+uncontrollable CH1toUR_2_e;
+uncontrollable CTC0toLR_2_e;
+uncontrollable CTC1toUR_2_e;
+uncontrollable PA_Align_2_e;
+controllable TRtoSUB_1_s;
+controllable SUBtoUR_1_s;
+controllable URtoSUB_1_s;
+controllable URtoDU_1_s;
+controllable URtoPA_1_s;
+controllable URtoCTC1_1_s;
+controllable PAtoUR_1_s;
+controllable PAtoLR_1_s;
+controllable LRtoDU_1_s;
+controllable LRtoPA_1_s;
+controllable LRtoCH0_1_s;
+controllable LRtoCH1_1_s;
+controllable LRtoCTC0_1_s;
+controllable DUtoUR_1_s;
+controllable DUtoLR_1_s;
+controllable DUtoTR_1_s;
+controllable CH0toLR_1_s;
+controllable CH0toUR_1_s;
+controllable CH1toLR_1_s;
+controllable CH1toUR_1_s;
+controllable CTC0toLR_1_s;
+controllable CTC1toUR_1_s;
+controllable PA_Align_1_s;
+uncontrollable TRtoSUB_1_e;
+uncontrollable SUBtoUR_1_e;
+uncontrollable URtoSUB_1_e;
+uncontrollable URtoDU_1_e;
+uncontrollable URtoPA_1_e;
+uncontrollable URtoCTC1_1_e;
+uncontrollable PAtoUR_1_e;
+uncontrollable PAtoLR_1_e;
+uncontrollable LRtoDU_1_e;
+uncontrollable LRtoPA_1_e;
+uncontrollable LRtoCH0_1_e;
+uncontrollable LRtoCH1_1_e;
+uncontrollable LRtoCTC0_1_e;
+uncontrollable DUtoUR_1_e;
+uncontrollable DUtoLR_1_e;
+uncontrollable DUtoTR_1_e;
+uncontrollable CH0toLR_1_e;
+uncontrollable CH0toUR_1_e;
+uncontrollable CH1toLR_1_e;
+uncontrollable CH1toUR_1_e;
+uncontrollable CTC0toLR_1_e;
+uncontrollable CTC1toUR_1_e;
+uncontrollable PA_Align_1_e;
+plant automaton swalmen:
+  controllable c_0;
+  controllable c_1;
+  controllable c_2;
+  controllable c_3;
+  controllable c_4;
+  controllable c_5;
+  controllable c_6;
+  controllable c_7;
+  controllable c_8;
+  location s0:
+    initial;
+    marked;
+    edge c_1 goto s1;
+    edge c_2 goto s2;
+    edge c_3 goto s3;
+    edge c_4 goto s4;
+    edge c_5 goto s5;
+    edge c_6 goto s6;
+    edge c_7 goto s7;
+    edge c_8 goto s8;
+  location s1:
+    marked;
+    edge c_0 goto s0;
+    edge c_2 goto s2;
+    edge c_3 goto s3;
+    edge c_4 goto s4;
+    edge c_5 goto s5;
+    edge c_6 goto s6;
+    edge c_7 goto s7;
+    edge c_8 goto s8;
+  location s2:
+    marked;
+    edge c_0 goto s0;
+    edge c_1 goto s1;
+    edge c_3 goto s3;
+    edge c_4 goto s4;
+    edge c_5 goto s5;
+    edge c_6 goto s6;
+    edge c_7 goto s7;
+    edge c_8 goto s8;
+  location s3:
+    marked;
+    edge c_0 goto s0;
+    edge c_1 goto s1;
+    edge c_2 goto s2;
+    edge c_4 goto s4;
+    edge c_5 goto s5;
+    edge c_6 goto s6;
+    edge c_7 goto s7;
+    edge c_8 goto s8;
+  location s4:
+    marked;
+    edge c_0 goto s0;
+    edge c_1 goto s1;
+    edge c_2 goto s2;
+    edge c_3 goto s3;
+    edge c_5 goto s5;
+    edge c_6 goto s6;
+    edge c_7 goto s7;
+    edge c_8 goto s8;
+  location s5:
+    marked;
+    edge c_0 goto s0;
+    edge c_1 goto s1;
+    edge c_2 goto s2;
+    edge c_3 goto s3;
+    edge c_4 goto s4;
+    edge c_6 goto s6;
+    edge c_7 goto s7;
+    edge c_8 goto s8;
+  location s6:
+    marked;
+    edge c_0 goto s0;
+    edge c_1 goto s1;
+    edge c_2 goto s2;
+    edge c_3 goto s3;
+    edge c_4 goto s4;
+    edge c_5 goto s5;
+    edge c_7 goto s7;
+    edge c_8 goto s8;
+  location s7:
+    marked;
+    edge c_0 goto s0;
+    edge c_1 goto s1;
+    edge c_2 goto s2;
+    edge c_3 goto s3;
+    edge c_4 goto s4;
+    edge c_5 goto s5;
+    edge c_6 goto s6;
+    edge c_8 goto s8;
+  location s8:
+    marked;
+    edge c_0 goto s0;
+    edge c_1 goto s1;
+    edge c_2 goto s2;
+    edge c_3 goto s3;
+    edge c_4 goto s4;
+    edge c_5 goto s5;
+    edge c_6 goto s6;
+    edge c_7 goto s7;
+end
+plant automaton WaferPlant_0:
+  location TR:
+    initial;
+    marked;
+    edge TRtoSUB_0_s goto TRtoSUB;
+    edge assignCH0_0, assignCH1_0, assignCH0orCH1_0;
+  location SUB:
+    marked;
+    edge SUBtoUR_0_s goto SUBtoUR;
+    edge SUB_Condition_0_s goto SUB_ConditionRunning;
+  location UR:
+    marked;
+    edge URtoSUB_0_s goto URtoSUB;
+    edge URtoDU_0_s goto URtoDU;
+    edge URtoPA_0_s goto URtoPA;
+    edge URtoCTC1_0_s goto URtoCTC1;
+  location PA:
+    marked;
+    edge PAtoUR_0_s goto PAtoUR;
+    edge PAtoLR_0_s goto PAtoLR;
+    edge PA_Align_0_s goto PA_AlignRunning;
+  location LR:
+    marked;
+    edge LRtoDU_0_s goto LRtoDU;
+    edge LRtoPA_0_s goto LRtoPA;
+    edge LRtoCH0_0_s goto LRtoCH0;
+    edge LRtoCH1_0_s goto LRtoCH1;
+    edge LRtoCTC0_0_s goto LRtoCTC0;
+  location DU:
+    marked;
+    edge DUtoUR_0_s goto DUtoUR;
+    edge DUtoLR_0_s goto DUtoLR;
+    edge DUtoTR_0_s goto DUtoTR;
+  location CH0:
+    marked;
+    edge CH0toLR_0_s goto CH0toLR;
+    edge CH0toUR_0_s goto CH0toUR;
+    edge CH0_Measure_0_s goto CH0_MeasureRunning;
+    edge CH0_Expose_0_s goto CH0_ExposeRunning;
+  location CH1:
+    marked;
+    edge CH1toLR_0_s goto CH1toLR;
+    edge CH1toUR_0_s goto CH1toUR;
+    edge CH1_Measure_0_s goto CH1_MeasureRunning;
+    edge CH1_Expose_0_s goto CH1_ExposeRunning;
+  location CTC0:
+    marked;
+    edge CTC0toLR_0_s goto CTC0toLR;
+  location CTC1:
+    marked;
+    edge CTC1toUR_0_s goto CTC1toUR;
+  location SUB_ConditionRunning:
+    edge SUB_Condition_0_e goto SUB;
+  location PA_AlignRunning:
+    edge PA_Align_0_e goto PA;
+  location CH0_MeasureRunning:
+    edge CH0_Measure_0_e goto CH0;
+  location CH0_ExposeRunning:
+    edge CH0_Expose_0_e goto CH0;
+  location CH1_MeasureRunning:
+    edge CH1_Measure_0_e goto CH1;
+  location CH1_ExposeRunning:
+    edge CH1_Expose_0_e goto CH1;
+  location TRtoSUB:
+    edge TRtoSUB_0_e goto SUB;
+  location SUBtoUR:
+    edge SUBtoUR_0_e goto UR;
+  location URtoSUB:
+    edge URtoSUB_0_e goto SUB;
+  location URtoDU:
+    edge URtoDU_0_e goto DU;
+  location URtoPA:
+    edge URtoPA_0_e goto PA;
+  location URtoCTC1:
+    edge URtoCTC1_0_e goto CTC1;
+  location PAtoUR:
+    edge PAtoUR_0_e goto UR;
+  location PAtoLR:
+    edge PAtoLR_0_e goto LR;
+  location LRtoDU:
+    edge LRtoDU_0_e goto DU;
+  location LRtoPA:
+    edge LRtoPA_0_e goto PA;
+  location LRtoCH0:
+    edge LRtoCH0_0_e goto CH0;
+  location LRtoCH1:
+    edge LRtoCH1_0_e goto CH1;
+  location LRtoCTC0:
+    edge LRtoCTC0_0_e goto CTC0;
+  location DUtoUR:
+    edge DUtoUR_0_e goto UR;
+  location DUtoLR:
+    edge DUtoLR_0_e goto LR;
+  location DUtoTR:
+    edge DUtoTR_0_e goto TR;
+  location CH0toLR:
+    edge CH0toLR_0_e goto LR;
+  location CH0toUR:
+    edge CH0toUR_0_e goto UR;
+  location CH1toLR:
+    edge CH1toLR_0_e goto LR;
+  location CH1toUR:
+    edge CH1toUR_0_e goto UR;
+  location CTC0toLR:
+    edge CTC0toLR_0_e goto LR;
+  location CTC1toUR:
+    edge CTC1toUR_0_e goto UR;
+end
+plant automaton WaferPlant_2:
+  location TR:
+    marked;
+    edge TRtoSUB_2_s goto TRtoSUB;
+  location SUB:
+    marked;
+    edge SUBtoUR_2_s goto SUBtoUR;
+  location UR:
+    marked;
+    edge URtoSUB_2_s goto URtoSUB;
+    edge URtoDU_2_s goto URtoDU;
+    edge URtoPA_2_s goto URtoPA;
+    edge URtoCTC1_2_s goto URtoCTC1;
+  location PA:
+    marked;
+    edge PAtoUR_2_s goto PAtoUR;
+    edge PAtoLR_2_s goto PAtoLR;
+    edge PA_Align_2_s goto PA_AlignRunning;
+  location LR:
+    marked;
+    edge LRtoDU_2_s goto LRtoDU;
+    edge LRtoPA_2_s goto LRtoPA;
+    edge LRtoCH0_2_s goto LRtoCH0;
+    edge LRtoCH1_2_s goto LRtoCH1;
+    edge LRtoCTC0_2_s goto LRtoCTC0;
+  location DU:
+    marked;
+    edge DUtoUR_2_s goto DUtoUR;
+    edge DUtoLR_2_s goto DUtoLR;
+    edge DUtoTR_2_s goto DUtoTR;
+  location CH0:
+    marked;
+    edge CH0toLR_2_s goto CH0toLR;
+    edge CH0toUR_2_s goto CH0toUR;
+  location CH1:
+    initial;
+    marked;
+    edge CH1toLR_2_s goto CH1toLR;
+    edge CH1toUR_2_s goto CH1toUR;
+  location CTC0:
+    marked;
+    edge CTC0toLR_2_s goto CTC0toLR;
+  location CTC1:
+    marked;
+    edge CTC1toUR_2_s goto CTC1toUR;
+  location PA_AlignRunning:
+    edge PA_Align_2_e goto PA;
+  location TRtoSUB:
+    edge TRtoSUB_2_e goto SUB;
+  location SUBtoUR:
+    edge SUBtoUR_2_e goto UR;
+  location URtoSUB:
+    edge URtoSUB_2_e goto SUB;
+  location URtoDU:
+    edge URtoDU_2_e goto DU;
+  location URtoPA:
+    edge URtoPA_2_e goto PA;
+  location URtoCTC1:
+    edge URtoCTC1_2_e goto CTC1;
+  location PAtoUR:
+    edge PAtoUR_2_e goto UR;
+  location PAtoLR:
+    edge PAtoLR_2_e goto LR;
+  location LRtoDU:
+    edge LRtoDU_2_e goto DU;
+  location LRtoPA:
+    edge LRtoPA_2_e goto PA;
+  location LRtoCH0:
+    edge LRtoCH0_2_e goto CH0;
+  location LRtoCH1:
+    edge LRtoCH1_2_e goto CH1;
+  location LRtoCTC0:
+    edge LRtoCTC0_2_e goto CTC0;
+  location DUtoUR:
+    edge DUtoUR_2_e goto UR;
+  location DUtoLR:
+    edge DUtoLR_2_e goto LR;
+  location DUtoTR:
+    edge DUtoTR_2_e goto TR;
+  location CH0toLR:
+    edge CH0toLR_2_e goto LR;
+  location CH0toUR:
+    edge CH0toUR_2_e goto UR;
+  location CH1toLR:
+    edge CH1toLR_2_e goto LR;
+  location CH1toUR:
+    edge CH1toUR_2_e goto UR;
+  location CTC0toLR:
+    edge CTC0toLR_2_e goto LR;
+  location CTC1toUR:
+    edge CTC1toUR_2_e goto UR;
+end
+plant automaton WaferPlant_1:
+  location TR:
+    marked;
+    edge TRtoSUB_1_s goto TRtoSUB;
+  location SUB:
+    marked;
+    edge SUBtoUR_1_s goto SUBtoUR;
+  location UR:
+    marked;
+    edge URtoSUB_1_s goto URtoSUB;
+    edge URtoDU_1_s goto URtoDU;
+    edge URtoPA_1_s goto URtoPA;
+    edge URtoCTC1_1_s goto URtoCTC1;
+  location PA:
+    marked;
+    edge PAtoUR_1_s goto PAtoUR;
+    edge PAtoLR_1_s goto PAtoLR;
+    edge PA_Align_1_s goto PA_AlignRunning;
+  location LR:
+    marked;
+    edge LRtoDU_1_s goto LRtoDU;
+    edge LRtoPA_1_s goto LRtoPA;
+    edge LRtoCH0_1_s goto LRtoCH0;
+    edge LRtoCH1_1_s goto LRtoCH1;
+    edge LRtoCTC0_1_s goto LRtoCTC0;
+  location DU:
+    marked;
+    edge DUtoUR_1_s goto DUtoUR;
+    edge DUtoLR_1_s goto DUtoLR;
+    edge DUtoTR_1_s goto DUtoTR;
+  location CH0:
+    initial;
+    marked;
+    edge CH0toLR_1_s goto CH0toLR;
+    edge CH0toUR_1_s goto CH0toUR;
+  location CH1:
+    marked;
+    edge CH1toLR_1_s goto CH1toLR;
+    edge CH1toUR_1_s goto CH1toUR;
+  location CTC0:
+    marked;
+    edge CTC0toLR_1_s goto CTC0toLR;
+  location CTC1:
+    marked;
+    edge CTC1toUR_1_s goto CTC1toUR;
+  location PA_AlignRunning:
+    edge PA_Align_1_e goto PA;
+  location TRtoSUB:
+    edge TRtoSUB_1_e goto SUB;
+  location SUBtoUR:
+    edge SUBtoUR_1_e goto UR;
+  location URtoSUB:
+    edge URtoSUB_1_e goto SUB;
+  location URtoDU:
+    edge URtoDU_1_e goto DU;
+  location URtoPA:
+    edge URtoPA_1_e goto PA;
+  location URtoCTC1:
+    edge URtoCTC1_1_e goto CTC1;
+  location PAtoUR:
+    edge PAtoUR_1_e goto UR;
+  location PAtoLR:
+    edge PAtoLR_1_e goto LR;
+  location LRtoDU:
+    edge LRtoDU_1_e goto DU;
+  location LRtoPA:
+    edge LRtoPA_1_e goto PA;
+  location LRtoCH0:
+    edge LRtoCH0_1_e goto CH0;
+  location LRtoCH1:
+    edge LRtoCH1_1_e goto CH1;
+  location LRtoCTC0:
+    edge LRtoCTC0_1_e goto CTC0;
+  location DUtoUR:
+    edge DUtoUR_1_e goto UR;
+  location DUtoLR:
+    edge DUtoLR_1_e goto LR;
+  location DUtoTR:
+    edge DUtoTR_1_e goto TR;
+  location CH0toLR:
+    edge CH0toLR_1_e goto LR;
+  location CH0toUR:
+    edge CH0toUR_1_e goto UR;
+  location CH1toLR:
+    edge CH1toLR_1_e goto LR;
+  location CH1toUR:
+    edge CH1toUR_1_e goto UR;
+  location CTC0toLR:
+    edge CTC0toLR_1_e goto LR;
+  location CTC1toUR:
+    edge CTC1toUR_1_e goto UR;
+end

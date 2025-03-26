@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CIF Simulator</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="trace-style.css" />
+
+  <script type="text/javascript" src="https://unpkg.com/vis-data@latest/peer/umd/vis-data.min.js"></script>
+  <script src="https://unpkg.com/vis-network@9.1.4/standalone/umd/vis-network.min.js"></script>
+
+
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/vis-network/styles/vis-network.min.css" />
+
+  <!-- <script type="text/javascript" src="../libs/vis-data.min.js"></script>
+  <script type="text/javascript" src="../libs/vis-network.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="../libs/vis-network.min.css" /> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body onload="onLoad()">
+  <div id="specSelection" style="display: none;">
+    <!-- <h2>Select CIF Specification</h2> -->
+
+    
+    <br /><br />
+    <div id="survey-class">
+    <h3>Survey models</h3>
+    <div class="specButtons">
+      <div id="testsButtons">
+        <button onclick="selectSpecification('dev', 'tests')">Model 1: Washing machine</button><br />
+        <button onclick="selectSpecification('reconfigurable_machine_tool_modeling_error', 'tests')">Model 2: Machine Tool</button><br >
+        <button onclick="selectSpecification('three_dining_philosopher', 'tests')">Model 3: Three dining philosophers</button><br />
+        <button onclick="selectSpecification('themapark_plants_requirements_ctrlsys_processed', 'tests')">Model 4: Themepark</button>
+
+      </div>
+    </div>
+</div>
+  </div>
+
+  <div class="controls" id="controlsDiv" style="visibility: hidden;">
+    <div id="selectedSpecDisplay"></div>
+    <button onclick="clearSelectedSpec()">change specification</button>
+    <div id="event-controls">
+      <b>Edges</b>
+      <select id="events-dropdown">
+        <option value="" disabled selected>Select edge</option>
+      </select>
+      <br /><br />
+      <button id="execute-event" onclick="executeSelectedEvent()">Execute</button>
+      <button id="undo-event" onclick="undoEvent()">Undo</button>
+      <button id="resetSimulation" onclick="reset()">Reset Simulation</button>
+    </div>
+    <b>Random executor</b><br />
+    <button id="start-random-events" onclick="startRandomEvents()">Start Random</button>
+    <button id="stop-random-events" onclick="stopRandomEvents()" disabled>Stop Random</button>
+    <label for="speed-slider">Speed: </label>
+    <input type="range" id="speed-slider" min="0.2" max="10" step="0.2" value="0.5" />
+    <span id="speed-value">1</span>
+    <b>State:</b>
+    <div class="output">
+      <pre id="consoleOutput">Waiting...</pre>
+    </div>
+    <div id="restrictionManager">
+      <label>
+        <input type="checkbox" id="myCheckbox" /> <b id="sup-overlay-text">Restriction overlay</b>
+      </label>
+      <ul id="selectedAutomataList"></ul>
+      
+      <select style="width:100%" id="automatonDropdown"></select>
+      <button  onclick="addSelectedAutomaton()">Add</button>
+      <button  onclick="addAllSynth()">Add all from synth/req.</button>
+
+      <button style=" border:2px solid darkred;" onclick="removeAllAutomata()">Remove All</button>
+
+    </div>
+    <label>
+      <input type="checkbox" id="guardCheckbox" /> <b id="guard-overlay-text">Event evaluation</b>
+    </label>
+    <br />
+    <label>
+      <input type="checkbox" id="traceCheckbox" /> <b>Trace overlay</b>
+    </label>
+    <label style="visibility: hidden; height:0px">
+      <input type="checkbox" style="margin-left:20px;" id="colorsCheckbox" /> 
+    </label>
+    <label style="visibility: hidden;  height:0px">
+      <input type="checkbox" style="margin-left:20px;" id="sumCheckbox" /> 
+    </label>
+    <br />
+    <b style="margin-top:-30px">Trace:</b>
+    <div class="trace"  >
+      <pre id="traceOutput">Waiting...</pre>
+    </div>
+  </div>
+
+  <div class="right-panel" id="rightPanel" style="visibility: hidden;">
+    <div class="graph-area" id="graph"></div>
+    <div class="guard-area" id="guardAreaId"></div>
+    <div id="traceOverlay" style="display:none;">d</div>
+    <div id="eventChartContainer"></div>
+  </div>
+
+  <!-- PARSING -->
+  <script src="xmltojson.js"></script>
+  <script src="utils.js" id="utilsFile"></script>
+
+  <!-- UITVOERING -->
+  <script>
+    let spec;
+    let xmlFileName;
+    let xmlFile;
+    let eventFunctionMap = {};
+    let trace = [];
+    let parsedData;
+    let locationBools = [];
+    let complexTrace = [];
+    let yellowAutomata = [];
+    let availableEvents = [];
+    let purpleEvents = [];
+    let restrictionList = [];
+    let selectedYellowEvent = "none";
+    let eventEvalationChecked = false;
+    let restrictionOverlayChecked = false; // flag to add "sup"
+    let automataTree;
+    const automatonNodes = {};
+    const automatonEdges = {};
+    const automatonNetworks = {};
+    const globalEventMap = {};
+    const globalEventNameMap = {}; // for controllable/uncontrollable checking
+
+    const gaurdDiv = document.getElementById("guardAreaId");
+    const guardcheckboxtext = document.getElementById("guard-overlay-text");
+
+    function onLoad() {
+      const selectedSpec = getSelectedSpec();
+      const selectedCategory = getSelectedCategory();
+      if (selectedSpec) {
+        document.getElementById("specSelection").style.display = "none";
+        document.getElementById("selectedSpecDisplay").innerText = `${selectedSpec} (${selectedCategory})`;
+        document.getElementById("controlsDiv").style.visibility = "visible";
+        document.getElementById("rightPanel").style.visibility = "visible";
+        loadScriptsForSpec(selectedSpec);
+      } else {
+        document.getElementById("specSelection").style.display = "block";
+      }
+    }
+
+    function selectSpecification(specName, specCategory) {
+      if (specName) {
+        setSelectedSpec(specName, specCategory);
+        location.reload();
+      } else {
+        alert("Please select a specification.");
+      }
+    }
+
+    function setSelectedSpec(specName, specCategory) {
+      localStorage.setItem("selectedSpec", specName);
+      localStorage.setItem("selectedCategory", specCategory);
+    }
+
+    function getSelectedSpec() {
+      return localStorage.getItem("selectedSpec");
+    }
+
+    function getSelectedCategory() {
+      return localStorage.getItem("selectedCategory");
+    }
+
+    function clearSelectedSpec() {
+      localStorage.removeItem("selectedSpec");
+      localStorage.removeItem("selectedCategory");
+      location.reload();
+    }
+
+    function loadScriptsForSpec(specName) {
+      const selectedCategory = getSelectedCategory();
+      if (!selectedCategory) {
+        console.error("Category not selected.");
+        return;
+      }
+      const scriptClass = document.createElement("script");
+      scriptClass.src = `data/${selectedCategory}/${specName}_class.js`;
+      scriptClass.onload = () => {
+        const scriptEventMap = document.createElement("script");
+        scriptEventMap.src = `data/${selectedCategory}/${specName}.js`;
+        scriptEventMap.onload = () => {
+          initializeSimulation(specName);
+        };
+        document.head.appendChild(scriptEventMap);
+      };
+      document.head.appendChild(scriptClass);
+    }
+
+    function initializeSimulation(specName) {
+  spec = new spec_class();
+  initializeEventFunctionMap();
+
+  xmlFileName = "xml_" + specName;
+  xmlFile = eval(xmlFileName);
+  parsedData = parseCIFXML(xmlFile);
+  console.log("XML is parsed");
+  console.log(parsedData);
+
+  if (parsedData && parsedData.automata) {
+    parsedData.automata.forEach(automaton => {
+      const isSynthOrReq = automaton.kind === "Supervisor" || automaton.kind === "Requirement";
+      if ((isSynthOrReq) && 
+          !restrictionList.includes(automaton.name)) {
+        restrictionList.push(automaton.name);
+      }
+    });
+
+    renderSelectedAutomata();
+  }
+
+  // Assign automatonNames globally.
+  window.automatonNames = parsedData.automata.map(automaton => automaton.name);
+
+      const graphContainer = document.getElementById("graph");
+      graphContainer.innerHTML = "";
+      reset();
+      parsedData.automata.forEach(automaton => {
+        drawAutomaton(automaton, graphContainer);
+      });
+
+      createEventButtons();
+      updateState();
+
+      //  automaton dropdown
+      populateAutomatonDropdown();
+
+      parsedData.automata.forEach(automaton => {
+        automaton.locations.forEach(location => {
+          const key = `${automaton.name}.${location.name}`;
+          locationBools[key] = false;
+        });
+      });
+      automataTree = generateAutomataTree(parsedData.automata);
+      printTree(automataTree);
+
+      initializeComplexTrace();
+    }
+    function initializeEventFunctionMap() {
+      const sortedEventNames = eventMap;
+      console.log("Event names:", sortedEventNames);
+      sortedEventNames.forEach((eventName, index) => {
+        const execEventFunctionName = `execEdge${index}`;
+        if (typeof spec[execEventFunctionName] === "function") {
+          eventFunctionMap[eventName] = spec[execEventFunctionName].bind(spec);
+        }
+      });
+    }
+
+    function getVariables(spec) {
+      return Object.keys(spec)
+        .filter(key => key.endsWith("_"))
+        .map(key => {
+          const rawValue = spec[key];
+          let formattedValue;
+          if (typeof rawValue === "number") {
+            formattedValue = rawValue;
+          } else if (typeof rawValue === "boolean") {
+            formattedValue = rawValue ? "true" : "false";
+          } else if (typeof rawValue === "symbol") {
+            formattedValue = rawValue.toString();
+          } else {
+            formattedValue = String(rawValue);
+          }
+          return { name: key, value: formattedValue };
+        });
+    }
+
+    function createEventButtons() {
+      const eventsDropdown = document.getElementById("events-dropdown");
+      eventsDropdown.innerHTML = '<option value="" disabled selected>Select edge</option>';
+      const availableEvents = getAvailableEdges(spec);
+      Object.keys(eventFunctionMap).forEach(eventName => {
+        const option = document.createElement("option");
+        option.value = eventName;
+        option.textContent = eventName;
+        if (!availableEvents.includes(eventName)) {
+          option.disabled = true;
+          option.style.color = "grey";
+        }
+        eventsDropdown.appendChild(option);
+      });
+    }
+
+    function getAvailableEdges(spec) {
+      const availableEdges = [];
+      const originalState = saveState(spec);
+      const keys = Object.getOwnPropertyNames(Object.getPrototypeOf(spec));
+      keys.forEach(key => {
+        if (key.startsWith("execEdge") && typeof spec[key] === "function") {
+          const edgeIndex = parseInt(key.replace("execEdge", ""), 10);
+          const eventName = eventMap[edgeIndex];
+          if (eventName) {
+            const executed = spec[key].call(spec);
+            if (executed) {
+              availableEdges.push(eventName);
+              restoreState(spec, originalState);
+            }
+          }
+        }
+      });
+      return availableEdges;
+    }
+
+    function saveState(spec) {
+      const state = {};
+      for (const key of Reflect.ownKeys(spec)) {
+        state[key] = spec[key];
+      }
+      return state;
+    }
+
+    function restoreState(spec, originalState) {
+      for (const key of Reflect.ownKeys(originalState)) {
+        spec[key] = originalState[key];
+      }
+    }
+
+    function executeSelectedEvent() {
+      const eventsDropdown = document.getElementById("events-dropdown");
+      const selectedEvent = eventsDropdown.value;
+      if (selectedEvent && eventFunctionMap[selectedEvent]) {
+        const executed = eventFunctionMap[selectedEvent]();
+        if (executed) {
+          logEvent(selectedEvent);
+          trace.push(selectedEvent);
+          updateState();
+          updateAutomataClasses();
+          updatePurpleOverlay();
+          let eventType = "controllable";
+          addTraceStep(selectedEvent, eventType);
+          createEventButtons(spec);
+        }
+      } else {
+        alert("Please select a valid event.");
+      }
+    }
+
+    function undoEvent() {
+      if (trace.length === 0) {
+        alert("No events to undo.");
+        return;
+      }
+      trace.pop();
+      updateTrace();
+      spec.reset();
+      trace.forEach(eventName => {
+        if (eventFunctionMap[eventName]) {
+          eventFunctionMap[eventName]();
+        }
+      });
+      updateState();
+      createEventButtons();
+    }
+
+    function updateState() {
+      const stateDisplay = document.getElementById("consoleOutput");
+      if (typeof spec.getStateText === "function") {
+        stateDisplay.innerText = spec.getStateText();
+      } else {
+        stateDisplay.innerText = "State information not available.";
+      }
+      if (purpleEvents.length > 0) {
+        updatePurpleOverlay();
+      }
+      highlightCurrentState();
+      requestAnimationFrame(() => {
+        updateVariableDisplay();
+      });
+      clearGuardOverlay(); 
+    }
+
+    function logEvent(eventName) {
+      const stateDisplay = document.getElementById("consoleOutput");
+      stateDisplay.innerText += `\nEvent Triggered: ${eventName}`;
+    }
+
+    function updateTrace() {
+      const traceDisplay = document.getElementById("traceOutput");
+      if (trace.length === 0) {
+        traceDisplay.innerText = "Waiting...";
+      } else {
+        traceDisplay.innerText = trace.join("\n");
+      }
+    }
+
+    function reset() {
+      if (spec.playing) stop();
+      spec.reset();
+      trace = [];
+      updateTrace();
+      clearLog();
+      updateState();
+      initializeComplexTrace();
+    // Reset edge labels to their original
+      
+    }
+
+    function clearLog() {
+      document.getElementById("consoleOutput").innerText = "Waiting...";
+    }
+
+    function start() {
+      if (!spec.playing) {
+        spec.log("start");
+        spec.start();
+      }
+    }
+
+    function stop() {
+      if (spec.playing) {
+        spec.stop();
+      }
+    }
+
+    let randomEventInterval = null;
+    document.getElementById("speed-slider").addEventListener("input", function () {
+      document.getElementById("speed-value").innerText = this.value;
+    });
+
+    function startRandomEvents() {
+      const speed = parseFloat(document.getElementById("speed-slider").value);
+      const interval = 1000 / speed;
+      randomEventInterval = setInterval(() => {
+        const availableEvents = getAvailableEdges(spec);
+        if (availableEvents.length > 0) {
+          const randomEvent = availableEvents[Math.floor(Math.random() * availableEvents.length)];
+          if (eventFunctionMap[randomEvent]) {
+            eventFunctionMap[randomEvent]();
+            logEvent(randomEvent);
+            trace.push(randomEvent);
+            updateTrace();
+            updateState();
+            let eventType = "controllable";
+            addTraceStep(randomEvent, eventType);
+            createEventButtons(spec);
+          }
+        }
+      }, interval);
+      document.getElementById("start-random-events").disabled = true;
+      document.getElementById("stop-random-events").disabled = false;
+    }
+
+    function stopRandomEvents() {
+      clearInterval(randomEventInterval);
+      randomEventInterval = null;
+      document.getElementById("start-random-events").disabled = false;
+      document.getElementById("stop-random-events").disabled = true;
+    }
+
+    // --- AUTOMATON RESTRICTIO ---
+
+    //
+    function populateAutomatonDropdown() {
+      const dropdown = document.getElementById("automatonDropdown");
+      dropdown.innerHTML = "";
+      if (parsedData && parsedData.automata) {
+        parsedData.automata.forEach(automaton => {
+          if (!restrictionList.includes(automaton.name)) {
+            const option = document.createElement("option");
+            option.value = automaton.name;
+            option.text = automaton.name;
+            dropdown.appendChild(option);
+          }
+        });
+      }
+    }
+
+    // Adds the selected automato
+    function addSelectedAutomaton() {
+      const dropdown = document.getElementById("automatonDropdown");
+      const automatonName = dropdown.value;
+      if (automatonName && !restrictionList.includes(automatonName)) {
+        restrictionList.push(automatonName);
+        updateAutomataClasses();
+
+      }
+      renderSelectedAutomata();
+      populateAutomatonDropdown();
+      updatePurpleOverlay();
+      highlightCurrentState();
+    }
+
+    // Remove a single automaton
+    function removeAutomaton(index) {
+      const automatonDiv = document.getElementById(`${restrictionList[index]}-div`);
+      restrictionList.splice(index, 1);
+      automatonDiv.classList.remove("automaton-container-purple");
+      renderSelectedAutomata();
+      updateAutomataClasses();
+      updatePurpleOverlay();
+      highlightCurrentState();
+      populateAutomatonDropdown();
+    }
+
+    function removeAllAutomata() {
+
+  window.automatonNames.forEach(name => {
+    const automatonDiv = document.getElementById(`${name}-div`);
+    if (automatonDiv) {
+      automatonDiv.classList.remove("automaton-container-purple");
+    }
+  });
+  // Clear  restriction list
+  restrictionList = [];
+  renderSelectedAutomata();
+  updateAutomataClasses();
+  populateAutomatonDropdown();
+}
+
+
+
+    function addAllSynth() {
+  if (parsedData && parsedData.automata) {
+    parsedData.automata.forEach(automaton => {
+      const isSynthOrReq = automaton.kind === "Supervisor" || 
+                          automaton.kind === "Requirement"; 
+      if (isSynthOrReq && !restrictionList.includes(automaton.name)) {
+        restrictionList.push(automaton.name);
+      }
+    });
+    updateAutomataClasses();
+    updatePurpleOverlay();
+    highlightCurrentState();
+  }
+  renderSelectedAutomata();
+  populateAutomatonDropdown();
+}
+    function renderSelectedAutomata() {
+      const list = document.getElementById("selectedAutomataList");
+      list.innerHTML = "";
+      restrictionList.forEach((name, index) => {
+        const li = document.createElement("li");
+        li.textContent = name + " ";
+        const removeBtn = document.createElement("button");
+        removeBtn.textContent = "[X]";
+        removeBtn.style.fontSize = "small";
+        removeBtn.onclick = () => removeAutomaton(index);
+        li.appendChild(removeBtn);
+        list.appendChild(li);
+      });
+
+    }
+    document.getElementById("myCheckbox").addEventListener("change", function () {
+  restrictionOverlayChecked = this.checked;
+});
+
+
+  </script>
+
+  <!-- VISUALISATIE-->
+  <script src="multi-graph.js"></script>
+  <script src="supervisoroverlay.js"></script>
+  <script src="guardevaluator.js"></script>
+  <script src="complextrace.js"></script>
+  <script src="tree-structure.js"></script>
+  <script src="ïnitialnode-overlay.js"></script>
+</body>
+
+</html>
