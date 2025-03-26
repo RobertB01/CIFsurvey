@@ -125,7 +125,7 @@ function updatePurpleOverlay() {
     }
   });
   
-  console.log("Purple events (only blocked by automata in restrictionList):", purpleEvents);
+  //console.log("Purple events (only blocked by automata in restrictionList):", purpleEvents);
   
   
   Object.keys(eventMap).forEach(eventName => {
