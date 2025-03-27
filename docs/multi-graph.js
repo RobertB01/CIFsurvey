@@ -186,8 +186,13 @@ function drawAutomaton(automaton, container) {
 const numNodes = automaton.locations.length;
 const totalEvents = automaton.edges.length;
 const eventsPerNode = totalEvents / numNodes;
-const clutterFactor = eventsPerNode > 1 ? 1 + (eventsPerNode - 1) * 0.2 : 1;
+let clutterFactor = eventsPerNode > 1 ? 1 + (eventsPerNode - 1) * 0.2 : 1;
 
+console.log(automaton.name)
+
+if (automaton.name == "DM" ||automaton.name == "operator" ){
+    clutterFactor = 1;
+}
 
 
     const automatonContainer = document.createElement("div");
