@@ -182,6 +182,11 @@ function drawAutomaton(automaton, container) {
 
     
     const maxSelfLoops = Math.max(...Object.values(selfLoopTracker), 0);
+
+    const selfLoopCounts = Object.values(selfLoopTracker);
+    const maxSelfLoopsPerNode = selfLoopCounts.length ? Math.max(...selfLoopCounts) : 0;
+    
+    const clutterFactor = 1 + (maxSelfLoopsPerNode * 0.3);
     
 
 
@@ -391,14 +396,15 @@ function drawAutomaton(automaton, container) {
                 hierarchical: {
                     direction: "UD",
                     sortMethod: "directed",
-                    nodeSpacing: 150,
-                    levelSeparation: 200
+                    nodeSpacing: 170*clutterFactor,
+                    levelSeparation: 150*clutterFactor
                 }
             },
             physics: { enabled: false }
         });
-        automatonContainer.style.height = `${161.72 + Math.pow(2, automaton.locations.length) * 0.86 + maxSelfLoops * 18}px`;
-        automatonContainer.style.width = `${150 + automaton.locations.length * 100}px`;
+        automatonContainer.style.height = `${161.72 + Math.pow(2, automaton.locations.length) * 3 + maxSelfLoops * 18}px`;
+        automatonContainer.style.width = `${150 + automaton.locations.length * 120*clutterFactor}px`;
+        
     }
     const network = new vis.Network(networkContainer, data, baseOptions);
 

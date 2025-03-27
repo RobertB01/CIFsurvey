@@ -30,8 +30,8 @@
     <h3>Survey models</h3>
     <div class="specButtons">
       <div id="testsButtons">
-        <button onclick="selectSpecification('dev', 'tests')">Model 1: Washing machine</button><br />
-        <button onclick="selectSpecification('reconfigurable_machine_tool_modeling_error', 'tests')">Model 2: Machine Tool</button><br >
+        <button onclick="selectSpecification('washing_machien', 'tests')">Model 1: Washing machine</button><br />
+        <button onclick="selectSpecification('dev', 'tests')">Model 2: Machine Tool</button><br >
         <button onclick="selectSpecification('three_dining_philosopher', 'tests')">Model 3: Three dining philosophers</button><br />
         <button onclick="selectSpecification('themapark_plants_requirements_ctrlsys_processed', 'tests')">Model 4: Themepark</button>
 
@@ -63,6 +63,20 @@
     <div class="output">
       <pre id="consoleOutput">Waiting...</pre>
     </div>
+
+    <label>
+      <input type="checkbox" id="guardCheckbox" /> <b id="guard-overlay-text">Event evaluation</b>
+    </label>
+    <br />
+    <label id="traceoverlaylabel">
+      <input type="checkbox" id="traceCheckbox" /> <b>Trace overlay</b>
+    </label>
+    <label style="visibility: hidden; height:0px">
+      <input type="checkbox" style="margin-left:20px;" id="colorsCheckbox" /> 
+    </label>
+    <label style="visibility: hidden;  height:0px">
+      <input type="checkbox" style="margin-left:20px;" id="sumCheckbox" /> 
+    </label>
     <div id="restrictionManager">
       <label>
         <input type="checkbox" id="myCheckbox" /> <b id="sup-overlay-text">Restriction overlay</b>
@@ -76,19 +90,6 @@
       <button style=" border:2px solid darkred;" onclick="removeAllAutomata()">Remove All</button>
 
     </div>
-    <label>
-      <input type="checkbox" id="guardCheckbox" /> <b id="guard-overlay-text">Event evaluation</b>
-    </label>
-    <br />
-    <label>
-      <input type="checkbox" id="traceCheckbox" /> <b>Trace overlay</b>
-    </label>
-    <label style="visibility: hidden; height:0px">
-      <input type="checkbox" style="margin-left:20px;" id="colorsCheckbox" /> 
-    </label>
-    <label style="visibility: hidden;  height:0px">
-      <input type="checkbox" style="margin-left:20px;" id="sumCheckbox" /> 
-    </label>
     <br />
     <b style="margin-top:-30px">Trace:</b>
     <div class="trace"  >
@@ -204,6 +205,29 @@
   parsedData = parseCIFXML(xmlFile);
   console.log("XML is parsed");
   console.log(parsedData);
+
+  console.log(specName);
+  if (specName == "washing_machien") {
+    let traceoverlaylabel = document.getElementById("traceoverlaylabel");
+    let restrictionbox = document.getElementById("restrictionManager");
+    restrictionbox.style.visibility = "hidden";
+    traceoverlaylabel.style.visibility = "hidden";
+    console.log("hide trace overlay and restriction overlay")
+  }
+  else if (specName == "dev") {
+    let traceoverlaylabel = document.getElementById("traceoverlaylabel");
+    let restrictionbox = document.getElementById("restrictionManager");
+    restrictionbox.style.visibility = "visible";
+    traceoverlaylabel.style.visibility = "hidden";
+    console.log("hide trace overlay but display restriction overlay")
+      }
+  else {
+    let traceoverlaylabel = document.getElementById("traceoverlaylabel");
+    let restrictionbox = document.getElementById("restrictionManager");
+    restrictionbox.style.visibility = "visbile";
+    traceoverlaylabel.style.visibility = "visible";
+    console.log("make trace overlay and restriction box visible")
+  }
 
   if (parsedData && parsedData.automata) {
     parsedData.automata.forEach(automaton => {

@@ -1,471 +1,903 @@
 const xml_dev = `<?xml version="1.0" encoding="UTF-8"?>
 <cif:Specification xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:automata="http://eclipse.org/escet/cif/automata" xmlns:cif="http://eclipse.org/escet/cif" xmlns:declarations="http://eclipse.org/escet/cif/declarations" xmlns:expressions="http://eclipse.org/escet/cif/expressions" xmlns:position="http://eclipse.org/escet/position" xmlns:types="http://eclipse.org/escet/cif/types" xsi:schemaLocation="http://eclipse.org/escet/cif/automata http://eclipse.org/escet/cif#//automata http://eclipse.org/escet/cif/declarations http://eclipse.org/escet/cif#//declarations http://eclipse.org/escet/cif/expressions http://eclipse.org/escet/cif#//expressions http://eclipse.org/escet/cif/types http://eclipse.org/escet/cif#//types" xmi:id="1" name="specification">
   <position xmi:type="position:Position" xmi:id="2" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="1" startColumn="1" endLine="1" endColumn="1" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-  <declarations xmi:type="declarations:Event" xmi:id="3" name="insertCoin" controllable="false">
-    <position xmi:type="position:Position" xmi:id="4" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="1" endOffset="24" startColumn="16" endLine="1" endColumn="25" startOffset="15" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-  </declarations>
-  <declarations xmi:type="declarations:Event" xmi:id="5" name="returnCoin" controllable="false">
-    <position xmi:type="position:Position" xmi:id="6" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="2" endOffset="52" startColumn="16" endLine="2" endColumn="25" startOffset="43" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-  </declarations>
-  <declarations xmi:type="declarations:Event" xmi:id="7" name="select90" controllable="false">
-    <position xmi:type="position:Position" xmi:id="8" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="3" endOffset="78" startColumn="16" endLine="3" endColumn="23" startOffset="71" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-  </declarations>
-  <declarations xmi:type="declarations:Event" xmi:id="9" name="select40" controllable="false">
-    <position xmi:type="position:Position" xmi:id="10" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="4" endOffset="104" startColumn="16" endLine="4" endColumn="23" startOffset="97" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-  </declarations>
-  <declarations xmi:type="declarations:Event" xmi:id="11" name="refill" controllable="false">
-    <position xmi:type="position:Position" xmi:id="12" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="5" endOffset="128" startColumn="16" endLine="5" endColumn="21" startOffset="123" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-  </declarations>
-  <declarations xmi:type="declarations:Event" xmi:id="13" name="openDoor" controllable="true">
-    <position xmi:type="position:Position" xmi:id="14" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="6" endOffset="152" startColumn="14" endLine="6" endColumn="21" startOffset="145" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-  </declarations>
-  <declarations xmi:type="declarations:Event" xmi:id="15" name="dispense" controllable="true">
-    <position xmi:type="position:Position" xmi:id="16" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="7" endOffset="176" startColumn="14" endLine="7" endColumn="21" startOffset="169" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-  </declarations>
-  <components xmi:type="automata:Automaton" xmi:id="17" name="washer">
-    <position xmi:type="position:Position" xmi:id="18" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="8" endOffset="195" startColumn="11" endLine="8" endColumn="16" startOffset="190" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-    <locations xmi:type="automata:Location" xmi:id="19" name="ready">
-      <position xmi:type="position:Position" xmi:id="20" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="9" endOffset="214" startColumn="12" endLine="9" endColumn="16" startOffset="210" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-      <initials xmi:type="expressions:BoolExpression" xmi:id="21" value="true">
-        <position xmi:type="position:Position" xmi:id="22" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="10" endOffset="228" startColumn="5" endLine="10" endColumn="11" startOffset="222" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-        <type xmi:type="types:BoolType" xmi:id="23">
-          <position xmi:type="position:Position" xmi:id="24" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="10" endOffset="228" startColumn="5" endLine="10" endColumn="11" startOffset="222" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+  <components xmi:type="automata:Automaton" xmi:id="3" name="conveyor">
+    <position xmi:type="position:Position" xmi:id="4" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="1" endOffset="17" startColumn="11" endLine="1" endColumn="18" startOffset="10" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+    <declarations xmi:type="declarations:Event" xmi:id="5" name="enterConveyor" controllable="false">
+      <position xmi:type="position:Position" xmi:id="6" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="2" endOffset="50" startColumn="18" endLine="2" endColumn="30" startOffset="38" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+    </declarations>
+    <declarations xmi:type="declarations:Event" xmi:id="7" name="leaveConveyor" controllable="false">
+      <position xmi:type="position:Position" xmi:id="8" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="3" endOffset="83" startColumn="18" endLine="3" endColumn="30" startOffset="71" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+    </declarations>
+    <locations xmi:type="automata:Location" xmi:id="9" name="noProduct">
+      <position xmi:type="position:Position" xmi:id="10" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="4" endOffset="106" startColumn="12" endLine="4" endColumn="20" startOffset="98" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+      <initials xmi:type="expressions:BoolExpression" xmi:id="11" value="true">
+        <position xmi:type="position:Position" xmi:id="12" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="5" endOffset="120" startColumn="5" endLine="5" endColumn="11" startOffset="114" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <type xmi:type="types:BoolType" xmi:id="13">
+          <position xmi:type="position:Position" xmi:id="14" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="5" endOffset="120" startColumn="5" endLine="5" endColumn="11" startOffset="114" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
         </type>
       </initials>
-      <edges xmi:type="automata:Edge" xmi:id="25" target="19">
-        <position xmi:type="position:Position" xmi:id="26" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="12" endOffset="252" startColumn="5" endLine="12" endColumn="8" startOffset="249" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-        <events xmi:type="automata:EdgeEvent" xmi:id="27">
-          <position xmi:type="position:Position" xmi:id="28" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="12" endOffset="261" startColumn="10" endLine="12" endColumn="17" startOffset="254" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-          <event xmi:type="expressions:EventExpression" xmi:id="29" event="13">
-            <position xmi:type="position:Position" xmi:id="30" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="12" endOffset="261" startColumn="10" endLine="12" endColumn="17" startOffset="254" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-            <type xmi:type="types:BoolType" xmi:id="31">
-              <position xmi:type="position:Position" xmi:id="32" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="12" endOffset="261" startColumn="10" endLine="12" endColumn="17" startOffset="254" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+      <edges xmi:type="automata:Edge" xmi:id="15" target="27">
+        <position xmi:type="position:Position" xmi:id="16" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="7" endOffset="144" startColumn="5" endLine="7" endColumn="8" startOffset="141" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <events xmi:type="automata:EdgeEvent" xmi:id="17">
+          <position xmi:type="position:Position" xmi:id="18" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="7" endOffset="158" startColumn="10" endLine="7" endColumn="22" startOffset="146" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          <event xmi:type="expressions:EventExpression" xmi:id="19" event="5">
+            <position xmi:type="position:Position" xmi:id="20" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="7" endOffset="158" startColumn="10" endLine="7" endColumn="22" startOffset="146" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="21">
+              <position xmi:type="position:Position" xmi:id="22" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="7" endOffset="158" startColumn="10" endLine="7" endColumn="22" startOffset="146" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
             </type>
           </event>
         </events>
       </edges>
-      <edges xmi:type="automata:Edge" xmi:id="33" target="113">
-        <position xmi:type="position:Position" xmi:id="34" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="13" endOffset="283" startColumn="5" endLine="13" endColumn="8" startOffset="280" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-        <events xmi:type="automata:EdgeEvent" xmi:id="35">
-          <position xmi:type="position:Position" xmi:id="36" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="13" endOffset="292" startColumn="10" endLine="13" endColumn="17" startOffset="285" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-          <event xmi:type="expressions:EventExpression" xmi:id="37" event="9">
-            <position xmi:type="position:Position" xmi:id="38" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="13" endOffset="292" startColumn="10" endLine="13" endColumn="17" startOffset="285" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-            <type xmi:type="types:BoolType" xmi:id="39">
-              <position xmi:type="position:Position" xmi:id="40" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="13" endOffset="292" startColumn="10" endLine="13" endColumn="17" startOffset="285" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-            </type>
-          </event>
-        </events>
-        <guards xmi:type="expressions:BinaryExpression" xmi:id="41" operator="Conjunction">
-          <position xmi:type="position:Position" xmi:id="42" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="13" endOffset="326" startColumn="49" endLine="13" endColumn="51" startOffset="324" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-          <type xmi:type="types:BoolType" xmi:id="43">
-            <position xmi:type="position:Position" xmi:id="44" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="13" endOffset="326" startColumn="49" endLine="13" endColumn="51" startOffset="324" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-          </type>
-          <left xmi:type="expressions:BinaryExpression" xmi:id="45" operator="Equal">
-            <position xmi:type="position:Position" xmi:id="46" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="13" endOffset="320" startColumn="45" endLine="13" endColumn="45" startOffset="320" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-            <type xmi:type="types:BoolType" xmi:id="47">
-              <position xmi:type="position:Position" xmi:id="48" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="13" endOffset="320" startColumn="45" endLine="13" endColumn="45" startOffset="320" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-            </type>
-            <left xmi:type="expressions:DiscVariableExpression" xmi:id="49" variable="169">
-              <position xmi:type="position:Position" xmi:id="50" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="13" endOffset="318" startColumn="24" endLine="13" endColumn="43" startOffset="299" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-              <type xmi:type="types:IntType" xmi:id="51">
-                <position xmi:type="position:Position" xmi:id="52" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="13" endOffset="318" startColumn="24" endLine="13" endColumn="43" startOffset="299" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-              </type>
-            </left>
-            <right xmi:type="expressions:IntExpression" xmi:id="53" value="2">
-              <position xmi:type="position:Position" xmi:id="54" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="13" endOffset="322" startColumn="47" endLine="13" endColumn="47" startOffset="322" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-              <type xmi:type="types:IntType" xmi:id="55" lower="2" upper="2">
-                <position xmi:type="position:Position" xmi:id="56" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="13" endOffset="322" startColumn="47" endLine="13" endColumn="47" startOffset="322" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-              </type>
-            </right>
-          </left>
-          <right xmi:type="expressions:LocationExpression" xmi:id="57" location="153">
-            <position xmi:type="position:Position" xmi:id="58" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="13" endOffset="351" startColumn="53" endLine="13" endColumn="76" startOffset="328" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-            <type xmi:type="types:BoolType" xmi:id="59">
-              <position xmi:type="position:Position" xmi:id="60" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="13" endOffset="351" startColumn="53" endLine="13" endColumn="76" startOffset="328" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-            </type>
-          </right>
-        </guards>
-      </edges>
-      <edges xmi:type="automata:Edge" xmi:id="61" target="93">
-        <position xmi:type="position:Position" xmi:id="62" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="14" endOffset="376" startColumn="5" endLine="14" endColumn="8" startOffset="373" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-        <events xmi:type="automata:EdgeEvent" xmi:id="63">
-          <position xmi:type="position:Position" xmi:id="64" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="14" endOffset="385" startColumn="10" endLine="14" endColumn="17" startOffset="378" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-          <event xmi:type="expressions:EventExpression" xmi:id="65" event="7">
-            <position xmi:type="position:Position" xmi:id="66" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="14" endOffset="385" startColumn="10" endLine="14" endColumn="17" startOffset="378" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-            <type xmi:type="types:BoolType" xmi:id="67">
-              <position xmi:type="position:Position" xmi:id="68" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="14" endOffset="385" startColumn="10" endLine="14" endColumn="17" startOffset="378" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-            </type>
-          </event>
-        </events>
-        <guards xmi:type="expressions:BinaryExpression" xmi:id="69" operator="Conjunction">
-          <position xmi:type="position:Position" xmi:id="70" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="14" endOffset="419" startColumn="49" endLine="14" endColumn="51" startOffset="417" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-          <type xmi:type="types:BoolType" xmi:id="71">
-            <position xmi:type="position:Position" xmi:id="72" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="14" endOffset="419" startColumn="49" endLine="14" endColumn="51" startOffset="417" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-          </type>
-          <left xmi:type="expressions:BinaryExpression" xmi:id="73" operator="Equal">
-            <position xmi:type="position:Position" xmi:id="74" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="14" endOffset="413" startColumn="45" endLine="14" endColumn="45" startOffset="413" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-            <type xmi:type="types:BoolType" xmi:id="75">
-              <position xmi:type="position:Position" xmi:id="76" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="14" endOffset="413" startColumn="45" endLine="14" endColumn="45" startOffset="413" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-            </type>
-            <left xmi:type="expressions:DiscVariableExpression" xmi:id="77" variable="169">
-              <position xmi:type="position:Position" xmi:id="78" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="14" endOffset="411" startColumn="24" endLine="14" endColumn="43" startOffset="392" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-              <type xmi:type="types:IntType" xmi:id="79">
-                <position xmi:type="position:Position" xmi:id="80" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="14" endOffset="411" startColumn="24" endLine="14" endColumn="43" startOffset="392" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-              </type>
-            </left>
-            <right xmi:type="expressions:IntExpression" xmi:id="81" value="3">
-              <position xmi:type="position:Position" xmi:id="82" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="14" endOffset="415" startColumn="47" endLine="14" endColumn="47" startOffset="415" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-              <type xmi:type="types:IntType" xmi:id="83" lower="3" upper="3">
-                <position xmi:type="position:Position" xmi:id="84" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="14" endOffset="415" startColumn="47" endLine="14" endColumn="47" startOffset="415" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-              </type>
-            </right>
-          </left>
-          <right xmi:type="expressions:LocationExpression" xmi:id="85" location="153">
-            <position xmi:type="position:Position" xmi:id="86" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="14" endOffset="444" startColumn="53" endLine="14" endColumn="76" startOffset="421" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-            <type xmi:type="types:BoolType" xmi:id="87">
-              <position xmi:type="position:Position" xmi:id="88" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="14" endOffset="444" startColumn="53" endLine="14" endColumn="76" startOffset="421" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-            </type>
-          </right>
-        </guards>
-      </edges>
-      <markeds xmi:type="expressions:BoolExpression" xmi:id="89" value="true">
-        <position xmi:type="position:Position" xmi:id="90" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="11" endOffset="241" startColumn="5" endLine="11" endColumn="10" startOffset="236" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-        <type xmi:type="types:BoolType" xmi:id="91">
-          <position xmi:type="position:Position" xmi:id="92" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="11" endOffset="241" startColumn="5" endLine="11" endColumn="10" startOffset="236" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+      <markeds xmi:type="expressions:BoolExpression" xmi:id="23" value="true">
+        <position xmi:type="position:Position" xmi:id="24" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="6" endOffset="133" startColumn="5" endLine="6" endColumn="10" startOffset="128" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <type xmi:type="types:BoolType" xmi:id="25">
+          <position xmi:type="position:Position" xmi:id="26" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="6" endOffset="133" startColumn="5" endLine="6" endColumn="10" startOffset="128" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
         </type>
       </markeds>
     </locations>
-    <locations xmi:type="automata:Location" xmi:id="93" name="washAt90">
-      <position xmi:type="position:Position" xmi:id="94" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="15" endOffset="480" startColumn="12" endLine="15" endColumn="19" startOffset="473" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-      <edges xmi:type="automata:Edge" xmi:id="95" target="103">
-        <position xmi:type="position:Position" xmi:id="96" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="16" endOffset="491" startColumn="5" endLine="16" endColumn="8" startOffset="488" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-        <events xmi:type="automata:EdgeEvent" xmi:id="97">
-          <position xmi:type="position:Position" xmi:id="98" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="16" endOffset="500" startColumn="10" endLine="16" endColumn="17" startOffset="493" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-          <event xmi:type="expressions:EventExpression" xmi:id="99" event="15">
-            <position xmi:type="position:Position" xmi:id="100" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="16" endOffset="500" startColumn="10" endLine="16" endColumn="17" startOffset="493" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-            <type xmi:type="types:BoolType" xmi:id="101">
-              <position xmi:type="position:Position" xmi:id="102" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="16" endOffset="500" startColumn="10" endLine="16" endColumn="17" startOffset="493" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-            </type>
-          </event>
-        </events>
-      </edges>
-    </locations>
-    <locations xmi:type="automata:Location" xmi:id="103" name="washing90">
-      <position xmi:type="position:Position" xmi:id="104" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="17" endOffset="538" startColumn="12" endLine="17" endColumn="20" startOffset="530" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-      <edges xmi:type="automata:Edge" xmi:id="105" target="19">
-        <position xmi:type="position:Position" xmi:id="106" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="18" endOffset="549" startColumn="5" endLine="18" endColumn="8" startOffset="546" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-        <events xmi:type="automata:EdgeEvent" xmi:id="107">
-          <position xmi:type="position:Position" xmi:id="108" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="18" endOffset="558" startColumn="10" endLine="18" endColumn="17" startOffset="551" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-          <event xmi:type="expressions:EventExpression" xmi:id="109" event="13">
-            <position xmi:type="position:Position" xmi:id="110" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="18" endOffset="558" startColumn="10" endLine="18" endColumn="17" startOffset="551" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-            <type xmi:type="types:BoolType" xmi:id="111">
-              <position xmi:type="position:Position" xmi:id="112" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="18" endOffset="558" startColumn="10" endLine="18" endColumn="17" startOffset="551" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-            </type>
-          </event>
-        </events>
-      </edges>
-    </locations>
-    <locations xmi:type="automata:Location" xmi:id="113" name="washAt40">
-      <position xmi:type="position:Position" xmi:id="114" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="19" endOffset="591" startColumn="12" endLine="19" endColumn="19" startOffset="584" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-      <edges xmi:type="automata:Edge" xmi:id="115" target="123">
-        <position xmi:type="position:Position" xmi:id="116" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="20" endOffset="602" startColumn="5" endLine="20" endColumn="8" startOffset="599" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-        <events xmi:type="automata:EdgeEvent" xmi:id="117">
-          <position xmi:type="position:Position" xmi:id="118" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="20" endOffset="611" startColumn="10" endLine="20" endColumn="17" startOffset="604" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-          <event xmi:type="expressions:EventExpression" xmi:id="119" event="15">
-            <position xmi:type="position:Position" xmi:id="120" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="20" endOffset="611" startColumn="10" endLine="20" endColumn="17" startOffset="604" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-            <type xmi:type="types:BoolType" xmi:id="121">
-              <position xmi:type="position:Position" xmi:id="122" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="20" endOffset="611" startColumn="10" endLine="20" endColumn="17" startOffset="604" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-            </type>
-          </event>
-        </events>
-      </edges>
-    </locations>
-    <locations xmi:type="automata:Location" xmi:id="123" name="washing40">
-      <position xmi:type="position:Position" xmi:id="124" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="21" endOffset="649" startColumn="12" endLine="21" endColumn="20" startOffset="641" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-      <edges xmi:type="automata:Edge" xmi:id="125" target="19">
-        <position xmi:type="position:Position" xmi:id="126" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="22" endOffset="660" startColumn="5" endLine="22" endColumn="8" startOffset="657" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-        <events xmi:type="automata:EdgeEvent" xmi:id="127">
-          <position xmi:type="position:Position" xmi:id="128" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="22" endOffset="669" startColumn="10" endLine="22" endColumn="17" startOffset="662" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-          <event xmi:type="expressions:EventExpression" xmi:id="129" event="13">
-            <position xmi:type="position:Position" xmi:id="130" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="22" endOffset="669" startColumn="10" endLine="22" endColumn="17" startOffset="662" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-            <type xmi:type="types:BoolType" xmi:id="131">
-              <position xmi:type="position:Position" xmi:id="132" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="22" endOffset="669" startColumn="10" endLine="22" endColumn="17" startOffset="662" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+    <locations xmi:type="automata:Location" xmi:id="27" name="productPresent">
+      <position xmi:type="position:Position" xmi:id="28" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="8" endOffset="206" startColumn="12" endLine="8" endColumn="25" startOffset="193" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+      <edges xmi:type="automata:Edge" xmi:id="29" target="9">
+        <position xmi:type="position:Position" xmi:id="30" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="9" endOffset="217" startColumn="5" endLine="9" endColumn="8" startOffset="214" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <events xmi:type="automata:EdgeEvent" xmi:id="31">
+          <position xmi:type="position:Position" xmi:id="32" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="9" endOffset="231" startColumn="10" endLine="9" endColumn="22" startOffset="219" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          <event xmi:type="expressions:EventExpression" xmi:id="33" event="7">
+            <position xmi:type="position:Position" xmi:id="34" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="9" endOffset="231" startColumn="10" endLine="9" endColumn="22" startOffset="219" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="35">
+              <position xmi:type="position:Position" xmi:id="36" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="9" endOffset="231" startColumn="10" endLine="9" endColumn="22" startOffset="219" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
             </type>
           </event>
         </events>
       </edges>
     </locations>
   </components>
-  <components xmi:type="automata:Automaton" xmi:id="133" name="detergent_dispenser">
-    <position xmi:type="position:Position" xmi:id="134" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="24" endOffset="717" startColumn="11" endLine="24" endColumn="29" startOffset="699" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-    <locations xmi:type="automata:Location" xmi:id="135" name="isEmpty">
-      <position xmi:type="position:Position" xmi:id="136" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="25" endOffset="738" startColumn="12" endLine="25" endColumn="18" startOffset="732" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-      <initials xmi:type="expressions:BoolExpression" xmi:id="137" value="true">
-        <position xmi:type="position:Position" xmi:id="138" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="26" endOffset="752" startColumn="5" endLine="26" endColumn="11" startOffset="746" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-        <type xmi:type="types:BoolType" xmi:id="139">
-          <position xmi:type="position:Position" xmi:id="140" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="26" endOffset="752" startColumn="5" endLine="26" endColumn="11" startOffset="746" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+  <components xmi:type="automata:Automaton" xmi:id="37" name="machineStand">
+    <position xmi:type="position:Position" xmi:id="38" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="11" endOffset="276" startColumn="11" endLine="11" endColumn="22" startOffset="265" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+    <declarations xmi:type="declarations:Event" xmi:id="39" name="moveDown" controllable="false">
+      <position xmi:type="position:Position" xmi:id="40" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="12" endOffset="304" startColumn="18" endLine="12" endColumn="25" startOffset="297" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+    </declarations>
+    <declarations xmi:type="declarations:Event" xmi:id="41" name="moveUp" controllable="false">
+      <position xmi:type="position:Position" xmi:id="42" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="13" endOffset="330" startColumn="18" endLine="13" endColumn="23" startOffset="325" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+    </declarations>
+    <locations xmi:type="automata:Location" xmi:id="43" name="up">
+      <position xmi:type="position:Position" xmi:id="44" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="14" endOffset="346" startColumn="12" endLine="14" endColumn="13" startOffset="345" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+      <initials xmi:type="expressions:BoolExpression" xmi:id="45" value="true">
+        <position xmi:type="position:Position" xmi:id="46" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="15" endOffset="360" startColumn="5" endLine="15" endColumn="11" startOffset="354" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <type xmi:type="types:BoolType" xmi:id="47">
+          <position xmi:type="position:Position" xmi:id="48" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="15" endOffset="360" startColumn="5" endLine="15" endColumn="11" startOffset="354" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
         </type>
       </initials>
-      <edges xmi:type="automata:Edge" xmi:id="141" target="153">
-        <position xmi:type="position:Position" xmi:id="142" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="28" endOffset="776" startColumn="5" endLine="28" endColumn="8" startOffset="773" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-        <events xmi:type="automata:EdgeEvent" xmi:id="143">
-          <position xmi:type="position:Position" xmi:id="144" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="28" endOffset="783" startColumn="10" endLine="28" endColumn="15" startOffset="778" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-          <event xmi:type="expressions:EventExpression" xmi:id="145" event="11">
-            <position xmi:type="position:Position" xmi:id="146" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="28" endOffset="783" startColumn="10" endLine="28" endColumn="15" startOffset="778" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-            <type xmi:type="types:BoolType" xmi:id="147">
-              <position xmi:type="position:Position" xmi:id="148" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="28" endOffset="783" startColumn="10" endLine="28" endColumn="15" startOffset="778" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+      <edges xmi:type="automata:Edge" xmi:id="49" target="61">
+        <position xmi:type="position:Position" xmi:id="50" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="17" endOffset="384" startColumn="5" endLine="17" endColumn="8" startOffset="381" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <events xmi:type="automata:EdgeEvent" xmi:id="51">
+          <position xmi:type="position:Position" xmi:id="52" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="17" endOffset="393" startColumn="10" endLine="17" endColumn="17" startOffset="386" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          <event xmi:type="expressions:EventExpression" xmi:id="53" event="39">
+            <position xmi:type="position:Position" xmi:id="54" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="17" endOffset="393" startColumn="10" endLine="17" endColumn="17" startOffset="386" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="55">
+              <position xmi:type="position:Position" xmi:id="56" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="17" endOffset="393" startColumn="10" endLine="17" endColumn="17" startOffset="386" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
             </type>
           </event>
         </events>
       </edges>
-      <markeds xmi:type="expressions:BoolExpression" xmi:id="149" value="true">
-        <position xmi:type="position:Position" xmi:id="150" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="27" endOffset="765" startColumn="5" endLine="27" endColumn="10" startOffset="760" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-        <type xmi:type="types:BoolType" xmi:id="151">
-          <position xmi:type="position:Position" xmi:id="152" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="27" endOffset="765" startColumn="5" endLine="27" endColumn="10" startOffset="760" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+      <markeds xmi:type="expressions:BoolExpression" xmi:id="57" value="true">
+        <position xmi:type="position:Position" xmi:id="58" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="16" endOffset="373" startColumn="5" endLine="16" endColumn="10" startOffset="368" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <type xmi:type="types:BoolType" xmi:id="59">
+          <position xmi:type="position:Position" xmi:id="60" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="16" endOffset="373" startColumn="5" endLine="16" endColumn="10" startOffset="368" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
         </type>
       </markeds>
     </locations>
-    <locations xmi:type="automata:Location" xmi:id="153" name="full">
-      <position xmi:type="position:Position" xmi:id="154" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="29" endOffset="811" startColumn="12" endLine="29" endColumn="15" startOffset="808" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-      <edges xmi:type="automata:Edge" xmi:id="155" target="135">
-        <position xmi:type="position:Position" xmi:id="156" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="31" endOffset="835" startColumn="5" endLine="31" endColumn="8" startOffset="832" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-        <events xmi:type="automata:EdgeEvent" xmi:id="157">
-          <position xmi:type="position:Position" xmi:id="158" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="31" endOffset="844" startColumn="10" endLine="31" endColumn="17" startOffset="837" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-          <event xmi:type="expressions:EventExpression" xmi:id="159" event="15">
-            <position xmi:type="position:Position" xmi:id="160" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="31" endOffset="844" startColumn="10" endLine="31" endColumn="17" startOffset="837" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-            <type xmi:type="types:BoolType" xmi:id="161">
-              <position xmi:type="position:Position" xmi:id="162" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="31" endOffset="844" startColumn="10" endLine="31" endColumn="17" startOffset="837" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+    <locations xmi:type="automata:Location" xmi:id="61" name="down">
+      <position xmi:type="position:Position" xmi:id="62" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="18" endOffset="421" startColumn="12" endLine="18" endColumn="15" startOffset="418" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+      <edges xmi:type="automata:Edge" xmi:id="63" target="43">
+        <position xmi:type="position:Position" xmi:id="64" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="19" endOffset="432" startColumn="5" endLine="19" endColumn="8" startOffset="429" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <events xmi:type="automata:EdgeEvent" xmi:id="65">
+          <position xmi:type="position:Position" xmi:id="66" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="19" endOffset="439" startColumn="10" endLine="19" endColumn="15" startOffset="434" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          <event xmi:type="expressions:EventExpression" xmi:id="67" event="41">
+            <position xmi:type="position:Position" xmi:id="68" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="19" endOffset="439" startColumn="10" endLine="19" endColumn="15" startOffset="434" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="69">
+              <position xmi:type="position:Position" xmi:id="70" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="19" endOffset="439" startColumn="10" endLine="19" endColumn="15" startOffset="434" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
             </type>
           </event>
         </events>
       </edges>
-      <markeds xmi:type="expressions:BoolExpression" xmi:id="163" value="true">
-        <position xmi:type="position:Position" xmi:id="164" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="30" endOffset="824" startColumn="5" endLine="30" endColumn="10" startOffset="819" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-        <type xmi:type="types:BoolType" xmi:id="165">
-          <position xmi:type="position:Position" xmi:id="166" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="30" endOffset="824" startColumn="5" endLine="30" endColumn="10" startOffset="819" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-        </type>
-      </markeds>
     </locations>
   </components>
-  <components xmi:type="automata:Automaton" xmi:id="167" name="coin_collector">
-    <position xmi:type="position:Position" xmi:id="168" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="33" endOffset="889" startColumn="11" endLine="33" endColumn="24" startOffset="876" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-    <declarations xmi:type="declarations:DiscVariable" xmi:id="169" name="coins">
-      <position xmi:type="position:Position" xmi:id="170" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="34" endOffset="908" startColumn="12" endLine="34" endColumn="16" startOffset="904" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-      <type xmi:type="types:IntType" xmi:id="171">
-        <position xmi:type="position:Position" xmi:id="172" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="34" endOffset="902" startColumn="8" endLine="34" endColumn="10" startOffset="900" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+  <components xmi:type="automata:Automaton" xmi:id="71" name="machineHead">
+    <position xmi:type="position:Position" xmi:id="72" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="21" endOffset="476" startColumn="11" endLine="21" endColumn="21" startOffset="466" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+    <declarations xmi:type="declarations:Event" xmi:id="73" name="M2D" controllable="false">
+      <position xmi:type="position:Position" xmi:id="74" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="22" endOffset="499" startColumn="18" endLine="22" endColumn="20" startOffset="497" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+    </declarations>
+    <declarations xmi:type="declarations:Event" xmi:id="75" name="D2M" controllable="false">
+      <position xmi:type="position:Position" xmi:id="76" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="23" endOffset="522" startColumn="18" endLine="23" endColumn="20" startOffset="520" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+    </declarations>
+    <declarations xmi:type="declarations:Event" xmi:id="77" name="D2P" controllable="false">
+      <position xmi:type="position:Position" xmi:id="78" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="24" endOffset="545" startColumn="18" endLine="24" endColumn="20" startOffset="543" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+    </declarations>
+    <declarations xmi:type="declarations:Event" xmi:id="79" name="P2D" controllable="false">
+      <position xmi:type="position:Position" xmi:id="80" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="25" endOffset="568" startColumn="18" endLine="25" endColumn="20" startOffset="566" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+    </declarations>
+    <declarations xmi:type="declarations:Event" xmi:id="81" name="M2P" controllable="false">
+      <position xmi:type="position:Position" xmi:id="82" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="26" endOffset="591" startColumn="18" endLine="26" endColumn="20" startOffset="589" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+    </declarations>
+    <declarations xmi:type="declarations:Event" xmi:id="83" name="P2M" controllable="false">
+      <position xmi:type="position:Position" xmi:id="84" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="27" endOffset="614" startColumn="18" endLine="27" endColumn="20" startOffset="612" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+    </declarations>
+    <locations xmi:type="automata:Location" xmi:id="85" name="opD">
+      <position xmi:type="position:Position" xmi:id="86" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="28" endOffset="631" startColumn="12" endLine="28" endColumn="14" startOffset="629" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+      <initials xmi:type="expressions:BoolExpression" xmi:id="87" value="true">
+        <position xmi:type="position:Position" xmi:id="88" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="29" endOffset="645" startColumn="5" endLine="29" endColumn="11" startOffset="639" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <type xmi:type="types:BoolType" xmi:id="89">
+          <position xmi:type="position:Position" xmi:id="90" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="29" endOffset="645" startColumn="5" endLine="29" endColumn="11" startOffset="639" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        </type>
+      </initials>
+      <edges xmi:type="automata:Edge" xmi:id="91" target="111">
+        <position xmi:type="position:Position" xmi:id="92" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="31" endOffset="669" startColumn="5" endLine="31" endColumn="8" startOffset="666" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <events xmi:type="automata:EdgeEvent" xmi:id="93">
+          <position xmi:type="position:Position" xmi:id="94" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="31" endOffset="673" startColumn="10" endLine="31" endColumn="12" startOffset="671" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          <event xmi:type="expressions:EventExpression" xmi:id="95" event="75">
+            <position xmi:type="position:Position" xmi:id="96" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="31" endOffset="673" startColumn="10" endLine="31" endColumn="12" startOffset="671" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="97">
+              <position xmi:type="position:Position" xmi:id="98" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="31" endOffset="673" startColumn="10" endLine="31" endColumn="12" startOffset="671" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            </type>
+          </event>
+        </events>
+      </edges>
+      <edges xmi:type="automata:Edge" xmi:id="99" target="129">
+        <position xmi:type="position:Position" xmi:id="100" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="32" endOffset="693" startColumn="5" endLine="32" endColumn="8" startOffset="690" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <events xmi:type="automata:EdgeEvent" xmi:id="101">
+          <position xmi:type="position:Position" xmi:id="102" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="32" endOffset="697" startColumn="10" endLine="32" endColumn="12" startOffset="695" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          <event xmi:type="expressions:EventExpression" xmi:id="103" event="77">
+            <position xmi:type="position:Position" xmi:id="104" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="32" endOffset="697" startColumn="10" endLine="32" endColumn="12" startOffset="695" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="105">
+              <position xmi:type="position:Position" xmi:id="106" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="32" endOffset="697" startColumn="10" endLine="32" endColumn="12" startOffset="695" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            </type>
+          </event>
+        </events>
+      </edges>
+      <markeds xmi:type="expressions:BoolExpression" xmi:id="107" value="true">
+        <position xmi:type="position:Position" xmi:id="108" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="30" endOffset="658" startColumn="5" endLine="30" endColumn="10" startOffset="653" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <type xmi:type="types:BoolType" xmi:id="109">
+          <position xmi:type="position:Position" xmi:id="110" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="30" endOffset="658" startColumn="5" endLine="30" endColumn="10" startOffset="653" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        </type>
+      </markeds>
+    </locations>
+    <locations xmi:type="automata:Location" xmi:id="111" name="opM">
+      <position xmi:type="position:Position" xmi:id="112" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="33" endOffset="723" startColumn="12" endLine="33" endColumn="14" startOffset="721" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+      <edges xmi:type="automata:Edge" xmi:id="113" target="85">
+        <position xmi:type="position:Position" xmi:id="114" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="34" endOffset="734" startColumn="5" endLine="34" endColumn="8" startOffset="731" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <events xmi:type="automata:EdgeEvent" xmi:id="115">
+          <position xmi:type="position:Position" xmi:id="116" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="34" endOffset="738" startColumn="10" endLine="34" endColumn="12" startOffset="736" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          <event xmi:type="expressions:EventExpression" xmi:id="117" event="73">
+            <position xmi:type="position:Position" xmi:id="118" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="34" endOffset="738" startColumn="10" endLine="34" endColumn="12" startOffset="736" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="119">
+              <position xmi:type="position:Position" xmi:id="120" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="34" endOffset="738" startColumn="10" endLine="34" endColumn="12" startOffset="736" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            </type>
+          </event>
+        </events>
+      </edges>
+      <edges xmi:type="automata:Edge" xmi:id="121" target="129">
+        <position xmi:type="position:Position" xmi:id="122" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="35" endOffset="758" startColumn="5" endLine="35" endColumn="8" startOffset="755" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <events xmi:type="automata:EdgeEvent" xmi:id="123">
+          <position xmi:type="position:Position" xmi:id="124" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="35" endOffset="762" startColumn="10" endLine="35" endColumn="12" startOffset="760" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          <event xmi:type="expressions:EventExpression" xmi:id="125" event="81">
+            <position xmi:type="position:Position" xmi:id="126" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="35" endOffset="762" startColumn="10" endLine="35" endColumn="12" startOffset="760" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="127">
+              <position xmi:type="position:Position" xmi:id="128" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="35" endOffset="762" startColumn="10" endLine="35" endColumn="12" startOffset="760" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            </type>
+          </event>
+        </events>
+      </edges>
+    </locations>
+    <locations xmi:type="automata:Location" xmi:id="129" name="opP">
+      <position xmi:type="position:Position" xmi:id="130" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="36" endOffset="788" startColumn="12" endLine="36" endColumn="14" startOffset="786" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+      <edges xmi:type="automata:Edge" xmi:id="131" target="85">
+        <position xmi:type="position:Position" xmi:id="132" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="37" endOffset="799" startColumn="5" endLine="37" endColumn="8" startOffset="796" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <events xmi:type="automata:EdgeEvent" xmi:id="133">
+          <position xmi:type="position:Position" xmi:id="134" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="37" endOffset="803" startColumn="10" endLine="37" endColumn="12" startOffset="801" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          <event xmi:type="expressions:EventExpression" xmi:id="135" event="79">
+            <position xmi:type="position:Position" xmi:id="136" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="37" endOffset="803" startColumn="10" endLine="37" endColumn="12" startOffset="801" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="137">
+              <position xmi:type="position:Position" xmi:id="138" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="37" endOffset="803" startColumn="10" endLine="37" endColumn="12" startOffset="801" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            </type>
+          </event>
+        </events>
+      </edges>
+      <edges xmi:type="automata:Edge" xmi:id="139" target="111">
+        <position xmi:type="position:Position" xmi:id="140" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="38" endOffset="823" startColumn="5" endLine="38" endColumn="8" startOffset="820" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <events xmi:type="automata:EdgeEvent" xmi:id="141">
+          <position xmi:type="position:Position" xmi:id="142" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="38" endOffset="827" startColumn="10" endLine="38" endColumn="12" startOffset="825" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          <event xmi:type="expressions:EventExpression" xmi:id="143" event="83">
+            <position xmi:type="position:Position" xmi:id="144" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="38" endOffset="827" startColumn="10" endLine="38" endColumn="12" startOffset="825" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="145">
+              <position xmi:type="position:Position" xmi:id="146" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="38" endOffset="827" startColumn="10" endLine="38" endColumn="12" startOffset="825" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            </type>
+          </event>
+        </events>
+      </edges>
+    </locations>
+  </components>
+  <components xmi:type="automata:Automaton" xmi:id="147" name="drill">
+    <position xmi:type="position:Position" xmi:id="148" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="40" endOffset="859" startColumn="11" endLine="40" endColumn="15" startOffset="855" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+    <declarations xmi:type="declarations:Event" xmi:id="149" name="startDrill" controllable="false">
+      <position xmi:type="position:Position" xmi:id="150" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="41" endOffset="889" startColumn="18" endLine="41" endColumn="27" startOffset="880" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+    </declarations>
+    <declarations xmi:type="declarations:Event" xmi:id="151" name="stopDrill" controllable="false">
+      <position xmi:type="position:Position" xmi:id="152" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="42" endOffset="918" startColumn="18" endLine="42" endColumn="26" startOffset="910" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+    </declarations>
+    <locations xmi:type="automata:Location" xmi:id="153" name="off">
+      <position xmi:type="position:Position" xmi:id="154" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="43" endOffset="935" startColumn="12" endLine="43" endColumn="14" startOffset="933" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+      <initials xmi:type="expressions:BoolExpression" xmi:id="155" value="true">
+        <position xmi:type="position:Position" xmi:id="156" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="44" endOffset="949" startColumn="5" endLine="44" endColumn="11" startOffset="943" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <type xmi:type="types:BoolType" xmi:id="157">
+          <position xmi:type="position:Position" xmi:id="158" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="44" endOffset="949" startColumn="5" endLine="44" endColumn="11" startOffset="943" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        </type>
+      </initials>
+      <edges xmi:type="automata:Edge" xmi:id="159" target="171">
+        <position xmi:type="position:Position" xmi:id="160" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="46" endOffset="973" startColumn="5" endLine="46" endColumn="8" startOffset="970" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <events xmi:type="automata:EdgeEvent" xmi:id="161">
+          <position xmi:type="position:Position" xmi:id="162" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="46" endOffset="984" startColumn="10" endLine="46" endColumn="19" startOffset="975" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          <event xmi:type="expressions:EventExpression" xmi:id="163" event="149">
+            <position xmi:type="position:Position" xmi:id="164" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="46" endOffset="984" startColumn="10" endLine="46" endColumn="19" startOffset="975" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="165">
+              <position xmi:type="position:Position" xmi:id="166" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="46" endOffset="984" startColumn="10" endLine="46" endColumn="19" startOffset="975" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            </type>
+          </event>
+        </events>
+      </edges>
+      <markeds xmi:type="expressions:BoolExpression" xmi:id="167" value="true">
+        <position xmi:type="position:Position" xmi:id="168" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="45" endOffset="962" startColumn="5" endLine="45" endColumn="10" startOffset="957" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <type xmi:type="types:BoolType" xmi:id="169">
+          <position xmi:type="position:Position" xmi:id="170" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="45" endOffset="962" startColumn="5" endLine="45" endColumn="10" startOffset="957" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        </type>
+      </markeds>
+    </locations>
+    <locations xmi:type="automata:Location" xmi:id="171" name="on">
+      <position xmi:type="position:Position" xmi:id="172" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="47" endOffset="1008" startColumn="12" endLine="47" endColumn="13" startOffset="1007" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+      <edges xmi:type="automata:Edge" xmi:id="173" target="153">
+        <position xmi:type="position:Position" xmi:id="174" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="48" endOffset="1019" startColumn="5" endLine="48" endColumn="8" startOffset="1016" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <events xmi:type="automata:EdgeEvent" xmi:id="175">
+          <position xmi:type="position:Position" xmi:id="176" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="48" endOffset="1029" startColumn="10" endLine="48" endColumn="18" startOffset="1021" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          <event xmi:type="expressions:EventExpression" xmi:id="177" event="151">
+            <position xmi:type="position:Position" xmi:id="178" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="48" endOffset="1029" startColumn="10" endLine="48" endColumn="18" startOffset="1021" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="179">
+              <position xmi:type="position:Position" xmi:id="180" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="48" endOffset="1029" startColumn="10" endLine="48" endColumn="18" startOffset="1021" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            </type>
+          </event>
+        </events>
+      </edges>
+    </locations>
+  </components>
+  <components xmi:type="automata:Automaton" xmi:id="181" name="mill">
+    <position xmi:type="position:Position" xmi:id="182" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="50" endOffset="1060" startColumn="11" endLine="50" endColumn="14" startOffset="1057" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+    <declarations xmi:type="declarations:Event" xmi:id="183" name="startMill" controllable="false">
+      <position xmi:type="position:Position" xmi:id="184" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="51" endOffset="1089" startColumn="18" endLine="51" endColumn="26" startOffset="1081" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+    </declarations>
+    <declarations xmi:type="declarations:Event" xmi:id="185" name="stopMill" controllable="false">
+      <position xmi:type="position:Position" xmi:id="186" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="52" endOffset="1117" startColumn="18" endLine="52" endColumn="25" startOffset="1110" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+    </declarations>
+    <locations xmi:type="automata:Location" xmi:id="187" name="off">
+      <position xmi:type="position:Position" xmi:id="188" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="53" endOffset="1134" startColumn="12" endLine="53" endColumn="14" startOffset="1132" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+      <initials xmi:type="expressions:BoolExpression" xmi:id="189" value="true">
+        <position xmi:type="position:Position" xmi:id="190" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="54" endOffset="1148" startColumn="5" endLine="54" endColumn="11" startOffset="1142" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <type xmi:type="types:BoolType" xmi:id="191">
+          <position xmi:type="position:Position" xmi:id="192" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="54" endOffset="1148" startColumn="5" endLine="54" endColumn="11" startOffset="1142" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        </type>
+      </initials>
+      <edges xmi:type="automata:Edge" xmi:id="193" target="205">
+        <position xmi:type="position:Position" xmi:id="194" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="56" endOffset="1172" startColumn="5" endLine="56" endColumn="8" startOffset="1169" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <events xmi:type="automata:EdgeEvent" xmi:id="195">
+          <position xmi:type="position:Position" xmi:id="196" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="56" endOffset="1182" startColumn="10" endLine="56" endColumn="18" startOffset="1174" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          <event xmi:type="expressions:EventExpression" xmi:id="197" event="183">
+            <position xmi:type="position:Position" xmi:id="198" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="56" endOffset="1182" startColumn="10" endLine="56" endColumn="18" startOffset="1174" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="199">
+              <position xmi:type="position:Position" xmi:id="200" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="56" endOffset="1182" startColumn="10" endLine="56" endColumn="18" startOffset="1174" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            </type>
+          </event>
+        </events>
+      </edges>
+      <markeds xmi:type="expressions:BoolExpression" xmi:id="201" value="true">
+        <position xmi:type="position:Position" xmi:id="202" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="55" endOffset="1161" startColumn="5" endLine="55" endColumn="10" startOffset="1156" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <type xmi:type="types:BoolType" xmi:id="203">
+          <position xmi:type="position:Position" xmi:id="204" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="55" endOffset="1161" startColumn="5" endLine="55" endColumn="10" startOffset="1156" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        </type>
+      </markeds>
+    </locations>
+    <locations xmi:type="automata:Location" xmi:id="205" name="on">
+      <position xmi:type="position:Position" xmi:id="206" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="57" endOffset="1206" startColumn="12" endLine="57" endColumn="13" startOffset="1205" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+      <edges xmi:type="automata:Edge" xmi:id="207" target="187">
+        <position xmi:type="position:Position" xmi:id="208" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="58" endOffset="1217" startColumn="5" endLine="58" endColumn="8" startOffset="1214" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <events xmi:type="automata:EdgeEvent" xmi:id="209">
+          <position xmi:type="position:Position" xmi:id="210" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="58" endOffset="1226" startColumn="10" endLine="58" endColumn="17" startOffset="1219" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          <event xmi:type="expressions:EventExpression" xmi:id="211" event="185">
+            <position xmi:type="position:Position" xmi:id="212" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="58" endOffset="1226" startColumn="10" endLine="58" endColumn="17" startOffset="1219" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="213">
+              <position xmi:type="position:Position" xmi:id="214" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="58" endOffset="1226" startColumn="10" endLine="58" endColumn="17" startOffset="1219" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            </type>
+          </event>
+        </events>
+      </edges>
+    </locations>
+  </components>
+  <components xmi:type="automata:Automaton" xmi:id="215" name="polisher">
+    <position xmi:type="position:Position" xmi:id="216" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="60" endOffset="1261" startColumn="11" endLine="60" endColumn="18" startOffset="1254" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+    <declarations xmi:type="declarations:Event" xmi:id="217" name="startPolisher" controllable="false">
+      <position xmi:type="position:Position" xmi:id="218" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="61" endOffset="1294" startColumn="18" endLine="61" endColumn="30" startOffset="1282" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+    </declarations>
+    <declarations xmi:type="declarations:Event" xmi:id="219" name="stopPolisher" controllable="false">
+      <position xmi:type="position:Position" xmi:id="220" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="62" endOffset="1326" startColumn="18" endLine="62" endColumn="29" startOffset="1315" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+    </declarations>
+    <locations xmi:type="automata:Location" xmi:id="221" name="off">
+      <position xmi:type="position:Position" xmi:id="222" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="63" endOffset="1343" startColumn="12" endLine="63" endColumn="14" startOffset="1341" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+      <initials xmi:type="expressions:BoolExpression" xmi:id="223" value="true">
+        <position xmi:type="position:Position" xmi:id="224" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="64" endOffset="1357" startColumn="5" endLine="64" endColumn="11" startOffset="1351" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <type xmi:type="types:BoolType" xmi:id="225">
+          <position xmi:type="position:Position" xmi:id="226" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="64" endOffset="1357" startColumn="5" endLine="64" endColumn="11" startOffset="1351" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        </type>
+      </initials>
+      <edges xmi:type="automata:Edge" xmi:id="227" target="239">
+        <position xmi:type="position:Position" xmi:id="228" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="66" endOffset="1381" startColumn="5" endLine="66" endColumn="8" startOffset="1378" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <events xmi:type="automata:EdgeEvent" xmi:id="229">
+          <position xmi:type="position:Position" xmi:id="230" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="66" endOffset="1395" startColumn="10" endLine="66" endColumn="22" startOffset="1383" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          <event xmi:type="expressions:EventExpression" xmi:id="231" event="217">
+            <position xmi:type="position:Position" xmi:id="232" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="66" endOffset="1395" startColumn="10" endLine="66" endColumn="22" startOffset="1383" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="233">
+              <position xmi:type="position:Position" xmi:id="234" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="66" endOffset="1395" startColumn="10" endLine="66" endColumn="22" startOffset="1383" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            </type>
+          </event>
+        </events>
+      </edges>
+      <markeds xmi:type="expressions:BoolExpression" xmi:id="235" value="true">
+        <position xmi:type="position:Position" xmi:id="236" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="65" endOffset="1370" startColumn="5" endLine="65" endColumn="10" startOffset="1365" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <type xmi:type="types:BoolType" xmi:id="237">
+          <position xmi:type="position:Position" xmi:id="238" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="65" endOffset="1370" startColumn="5" endLine="65" endColumn="10" startOffset="1365" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        </type>
+      </markeds>
+    </locations>
+    <locations xmi:type="automata:Location" xmi:id="239" name="on">
+      <position xmi:type="position:Position" xmi:id="240" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="67" endOffset="1419" startColumn="12" endLine="67" endColumn="13" startOffset="1418" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+      <edges xmi:type="automata:Edge" xmi:id="241" target="221">
+        <position xmi:type="position:Position" xmi:id="242" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="68" endOffset="1430" startColumn="5" endLine="68" endColumn="8" startOffset="1427" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <events xmi:type="automata:EdgeEvent" xmi:id="243">
+          <position xmi:type="position:Position" xmi:id="244" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="68" endOffset="1443" startColumn="10" endLine="68" endColumn="21" startOffset="1432" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          <event xmi:type="expressions:EventExpression" xmi:id="245" event="219">
+            <position xmi:type="position:Position" xmi:id="246" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="68" endOffset="1443" startColumn="10" endLine="68" endColumn="21" startOffset="1432" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="247">
+              <position xmi:type="position:Position" xmi:id="248" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="68" endOffset="1443" startColumn="10" endLine="68" endColumn="21" startOffset="1432" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            </type>
+          </event>
+        </events>
+      </edges>
+    </locations>
+  </components>
+  <components xmi:type="automata:Automaton" xmi:id="249" name="r_C" kind="Requirement">
+    <position xmi:type="position:Position" xmi:id="250" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="70" endOffset="1485" startColumn="23" endLine="70" endColumn="25" startOffset="1483" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+    <locations xmi:type="automata:Location" xmi:id="251" name="a">
+      <position xmi:type="position:Position" xmi:id="252" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="71" endOffset="1500" startColumn="12" endLine="71" endColumn="12" startOffset="1500" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+      <initials xmi:type="expressions:BoolExpression" xmi:id="253" value="true">
+        <position xmi:type="position:Position" xmi:id="254" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="72" endOffset="1514" startColumn="5" endLine="72" endColumn="11" startOffset="1508" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <type xmi:type="types:BoolType" xmi:id="255">
+          <position xmi:type="position:Position" xmi:id="256" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="72" endOffset="1514" startColumn="5" endLine="72" endColumn="11" startOffset="1508" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        </type>
+      </initials>
+      <edges xmi:type="automata:Edge" xmi:id="257" target="269">
+        <position xmi:type="position:Position" xmi:id="258" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="74" endOffset="1538" startColumn="5" endLine="74" endColumn="8" startOffset="1535" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <events xmi:type="automata:EdgeEvent" xmi:id="259">
+          <position xmi:type="position:Position" xmi:id="260" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="74" endOffset="1560" startColumn="10" endLine="74" endColumn="30" startOffset="1540" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          <event xmi:type="expressions:EventExpression" xmi:id="261" event="39">
+            <position xmi:type="position:Position" xmi:id="262" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="74" endOffset="1560" startColumn="10" endLine="74" endColumn="30" startOffset="1540" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="263">
+              <position xmi:type="position:Position" xmi:id="264" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="74" endOffset="1560" startColumn="10" endLine="74" endColumn="30" startOffset="1540" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            </type>
+          </event>
+        </events>
+      </edges>
+      <markeds xmi:type="expressions:BoolExpression" xmi:id="265" value="true">
+        <position xmi:type="position:Position" xmi:id="266" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="73" endOffset="1527" startColumn="5" endLine="73" endColumn="10" startOffset="1522" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <type xmi:type="types:BoolType" xmi:id="267">
+          <position xmi:type="position:Position" xmi:id="268" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="73" endOffset="1527" startColumn="5" endLine="73" endColumn="10" startOffset="1522" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        </type>
+      </markeds>
+    </locations>
+    <locations xmi:type="automata:Location" xmi:id="269" name="b">
+      <position xmi:type="position:Position" xmi:id="270" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="75" endOffset="1582" startColumn="12" endLine="75" endColumn="12" startOffset="1582" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+      <edges xmi:type="automata:Edge" xmi:id="271" target="251">
+        <position xmi:type="position:Position" xmi:id="272" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="76" endOffset="1593" startColumn="5" endLine="76" endColumn="8" startOffset="1590" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <events xmi:type="automata:EdgeEvent" xmi:id="273">
+          <position xmi:type="position:Position" xmi:id="274" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="76" endOffset="1613" startColumn="10" endLine="76" endColumn="28" startOffset="1595" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          <event xmi:type="expressions:EventExpression" xmi:id="275" event="41">
+            <position xmi:type="position:Position" xmi:id="276" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="76" endOffset="1613" startColumn="10" endLine="76" endColumn="28" startOffset="1595" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="277">
+              <position xmi:type="position:Position" xmi:id="278" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="76" endOffset="1613" startColumn="10" endLine="76" endColumn="28" startOffset="1595" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            </type>
+          </event>
+        </events>
+      </edges>
+      <edges xmi:type="automata:Edge" xmi:id="279" target="303">
+        <position xmi:type="position:Position" xmi:id="280" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="77" endOffset="1631" startColumn="5" endLine="77" endColumn="8" startOffset="1628" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <events xmi:type="automata:EdgeEvent" xmi:id="281">
+          <position xmi:type="position:Position" xmi:id="282" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="77" endOffset="1646" startColumn="10" endLine="77" endColumn="23" startOffset="1633" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          <event xmi:type="expressions:EventExpression" xmi:id="283" event="183">
+            <position xmi:type="position:Position" xmi:id="284" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="77" endOffset="1646" startColumn="10" endLine="77" endColumn="23" startOffset="1633" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="285">
+              <position xmi:type="position:Position" xmi:id="286" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="77" endOffset="1646" startColumn="10" endLine="77" endColumn="23" startOffset="1633" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            </type>
+          </event>
+        </events>
+      </edges>
+      <edges xmi:type="automata:Edge" xmi:id="287" target="313">
+        <position xmi:type="position:Position" xmi:id="288" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="78" endOffset="1664" startColumn="5" endLine="78" endColumn="8" startOffset="1661" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <events xmi:type="automata:EdgeEvent" xmi:id="289">
+          <position xmi:type="position:Position" xmi:id="290" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="78" endOffset="1681" startColumn="10" endLine="78" endColumn="25" startOffset="1666" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          <event xmi:type="expressions:EventExpression" xmi:id="291" event="149">
+            <position xmi:type="position:Position" xmi:id="292" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="78" endOffset="1681" startColumn="10" endLine="78" endColumn="25" startOffset="1666" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="293">
+              <position xmi:type="position:Position" xmi:id="294" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="78" endOffset="1681" startColumn="10" endLine="78" endColumn="25" startOffset="1666" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            </type>
+          </event>
+        </events>
+      </edges>
+      <edges xmi:type="automata:Edge" xmi:id="295" target="323">
+        <position xmi:type="position:Position" xmi:id="296" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="79" endOffset="1699" startColumn="5" endLine="79" endColumn="8" startOffset="1696" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <events xmi:type="automata:EdgeEvent" xmi:id="297">
+          <position xmi:type="position:Position" xmi:id="298" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="79" endOffset="1722" startColumn="10" endLine="79" endColumn="31" startOffset="1701" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          <event xmi:type="expressions:EventExpression" xmi:id="299" event="217">
+            <position xmi:type="position:Position" xmi:id="300" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="79" endOffset="1722" startColumn="10" endLine="79" endColumn="31" startOffset="1701" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="301">
+              <position xmi:type="position:Position" xmi:id="302" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="79" endOffset="1722" startColumn="10" endLine="79" endColumn="31" startOffset="1701" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            </type>
+          </event>
+        </events>
+      </edges>
+    </locations>
+    <locations xmi:type="automata:Location" xmi:id="303" name="c">
+      <position xmi:type="position:Position" xmi:id="304" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="80" endOffset="1744" startColumn="12" endLine="80" endColumn="12" startOffset="1744" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+      <edges xmi:type="automata:Edge" xmi:id="305" target="269">
+        <position xmi:type="position:Position" xmi:id="306" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="81" endOffset="1755" startColumn="5" endLine="81" endColumn="8" startOffset="1752" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <events xmi:type="automata:EdgeEvent" xmi:id="307">
+          <position xmi:type="position:Position" xmi:id="308" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="81" endOffset="1769" startColumn="10" endLine="81" endColumn="22" startOffset="1757" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          <event xmi:type="expressions:EventExpression" xmi:id="309" event="185">
+            <position xmi:type="position:Position" xmi:id="310" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="81" endOffset="1769" startColumn="10" endLine="81" endColumn="22" startOffset="1757" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="311">
+              <position xmi:type="position:Position" xmi:id="312" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="81" endOffset="1769" startColumn="10" endLine="81" endColumn="22" startOffset="1757" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            </type>
+          </event>
+        </events>
+      </edges>
+    </locations>
+    <locations xmi:type="automata:Location" xmi:id="313" name="d">
+      <position xmi:type="position:Position" xmi:id="314" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="82" endOffset="1791" startColumn="12" endLine="82" endColumn="12" startOffset="1791" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+      <edges xmi:type="automata:Edge" xmi:id="315" target="269">
+        <position xmi:type="position:Position" xmi:id="316" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="83" endOffset="1802" startColumn="5" endLine="83" endColumn="8" startOffset="1799" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <events xmi:type="automata:EdgeEvent" xmi:id="317">
+          <position xmi:type="position:Position" xmi:id="318" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="83" endOffset="1818" startColumn="10" endLine="83" endColumn="24" startOffset="1804" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          <event xmi:type="expressions:EventExpression" xmi:id="319" event="151">
+            <position xmi:type="position:Position" xmi:id="320" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="83" endOffset="1818" startColumn="10" endLine="83" endColumn="24" startOffset="1804" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="321">
+              <position xmi:type="position:Position" xmi:id="322" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="83" endOffset="1818" startColumn="10" endLine="83" endColumn="24" startOffset="1804" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            </type>
+          </event>
+        </events>
+      </edges>
+    </locations>
+    <locations xmi:type="automata:Location" xmi:id="323" name="e">
+      <position xmi:type="position:Position" xmi:id="324" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="84" endOffset="1840" startColumn="12" endLine="84" endColumn="12" startOffset="1840" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+      <edges xmi:type="automata:Edge" xmi:id="325" target="269">
+        <position xmi:type="position:Position" xmi:id="326" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="85" endOffset="1851" startColumn="5" endLine="85" endColumn="8" startOffset="1848" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <events xmi:type="automata:EdgeEvent" xmi:id="327">
+          <position xmi:type="position:Position" xmi:id="328" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="85" endOffset="1873" startColumn="10" endLine="85" endColumn="30" startOffset="1853" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          <event xmi:type="expressions:EventExpression" xmi:id="329" event="219">
+            <position xmi:type="position:Position" xmi:id="330" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="85" endOffset="1873" startColumn="10" endLine="85" endColumn="30" startOffset="1853" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="331">
+              <position xmi:type="position:Position" xmi:id="332" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="85" endOffset="1873" startColumn="10" endLine="85" endColumn="30" startOffset="1853" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            </type>
+          </event>
+        </events>
+      </edges>
+    </locations>
+  </components>
+  <components xmi:type="automata:Automaton" xmi:id="333" name="r_A" kind="Supervisor">
+    <position xmi:type="position:Position" xmi:id="334" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="87" endOffset="1912" startColumn="22" endLine="87" endColumn="24" startOffset="1910" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+    <locations xmi:type="automata:Location" xmi:id="335" name="a">
+      <position xmi:type="position:Position" xmi:id="336" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="88" endOffset="1927" startColumn="12" endLine="88" endColumn="12" startOffset="1927" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+      <initials xmi:type="expressions:BoolExpression" xmi:id="337" value="true">
+        <position xmi:type="position:Position" xmi:id="338" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="89" endOffset="1941" startColumn="5" endLine="89" endColumn="11" startOffset="1935" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <type xmi:type="types:BoolType" xmi:id="339">
+          <position xmi:type="position:Position" xmi:id="340" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="89" endOffset="1941" startColumn="5" endLine="89" endColumn="11" startOffset="1935" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        </type>
+      </initials>
+      <edges xmi:type="automata:Edge" xmi:id="341" target="353">
+        <position xmi:type="position:Position" xmi:id="342" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="91" endOffset="1965" startColumn="5" endLine="91" endColumn="8" startOffset="1962" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <events xmi:type="automata:EdgeEvent" xmi:id="343">
+          <position xmi:type="position:Position" xmi:id="344" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="91" endOffset="1988" startColumn="10" endLine="91" endColumn="31" startOffset="1967" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          <event xmi:type="expressions:EventExpression" xmi:id="345" event="5">
+            <position xmi:type="position:Position" xmi:id="346" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="91" endOffset="1988" startColumn="10" endLine="91" endColumn="31" startOffset="1967" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="347">
+              <position xmi:type="position:Position" xmi:id="348" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="91" endOffset="1988" startColumn="10" endLine="91" endColumn="31" startOffset="1967" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            </type>
+          </event>
+        </events>
+      </edges>
+      <markeds xmi:type="expressions:BoolExpression" xmi:id="349" value="true">
+        <position xmi:type="position:Position" xmi:id="350" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="90" endOffset="1954" startColumn="5" endLine="90" endColumn="10" startOffset="1949" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <type xmi:type="types:BoolType" xmi:id="351">
+          <position xmi:type="position:Position" xmi:id="352" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="90" endOffset="1954" startColumn="5" endLine="90" endColumn="10" startOffset="1949" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        </type>
+      </markeds>
+    </locations>
+    <locations xmi:type="automata:Location" xmi:id="353" name="b">
+      <position xmi:type="position:Position" xmi:id="354" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="92" endOffset="2010" startColumn="12" endLine="92" endColumn="12" startOffset="2010" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+      <edges xmi:type="automata:Edge" xmi:id="355">
+        <position xmi:type="position:Position" xmi:id="356" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="93" endOffset="2021" startColumn="5" endLine="93" endColumn="8" startOffset="2018" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <events xmi:type="automata:EdgeEvent" xmi:id="357">
+          <position xmi:type="position:Position" xmi:id="358" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="93" endOffset="2043" startColumn="10" endLine="93" endColumn="30" startOffset="2023" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          <event xmi:type="expressions:EventExpression" xmi:id="359" event="39">
+            <position xmi:type="position:Position" xmi:id="360" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="93" endOffset="2043" startColumn="10" endLine="93" endColumn="30" startOffset="2023" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="361">
+              <position xmi:type="position:Position" xmi:id="362" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="93" endOffset="2043" startColumn="10" endLine="93" endColumn="30" startOffset="2023" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            </type>
+          </event>
+        </events>
+      </edges>
+      <edges xmi:type="automata:Edge" xmi:id="363" target="335">
+        <position xmi:type="position:Position" xmi:id="364" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="94" endOffset="2054" startColumn="5" endLine="94" endColumn="8" startOffset="2051" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <events xmi:type="automata:EdgeEvent" xmi:id="365">
+          <position xmi:type="position:Position" xmi:id="366" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="94" endOffset="2077" startColumn="10" endLine="94" endColumn="31" startOffset="2056" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          <event xmi:type="expressions:EventExpression" xmi:id="367" event="7">
+            <position xmi:type="position:Position" xmi:id="368" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="94" endOffset="2077" startColumn="10" endLine="94" endColumn="31" startOffset="2056" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="369">
+              <position xmi:type="position:Position" xmi:id="370" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="94" endOffset="2077" startColumn="10" endLine="94" endColumn="31" startOffset="2056" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            </type>
+          </event>
+        </events>
+      </edges>
+    </locations>
+  </components>
+  <components xmi:type="automata:Automaton" xmi:id="371" name="r_B" kind="Requirement">
+    <position xmi:type="position:Position" xmi:id="372" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="96" endOffset="2117" startColumn="23" endLine="96" endColumn="25" startOffset="2115" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+    <declarations xmi:type="declarations:DiscVariable" xmi:id="373" name="x">
+      <position xmi:type="position:Position" xmi:id="374" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="97" endOffset="2133" startColumn="13" endLine="97" endColumn="13" startOffset="2133" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+      <type xmi:type="types:BoolType" xmi:id="375">
+        <position xmi:type="position:Position" xmi:id="376" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="97" endOffset="2131" startColumn="8" endLine="97" endColumn="11" startOffset="2128" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
       </type>
-      <value xmi:type="declarations:VariableValue" xmi:id="173">
-        <position xmi:type="position:Position" xmi:id="174" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="34" endOffset="908" startColumn="12" endLine="34" endColumn="16" startOffset="904" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-        <values xmi:type="expressions:IntExpression" xmi:id="175">
-          <position xmi:type="position:Position" xmi:id="176" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="34" endOffset="912" startColumn="20" endLine="34" endColumn="20" startOffset="912" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-          <type xmi:type="types:IntType" xmi:id="177" lower="0" upper="0">
-            <position xmi:type="position:Position" xmi:id="178" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="34" endOffset="912" startColumn="20" endLine="34" endColumn="20" startOffset="912" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+      <value xmi:type="declarations:VariableValue" xmi:id="377">
+        <position xmi:type="position:Position" xmi:id="378" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="97" endOffset="2133" startColumn="13" endLine="97" endColumn="13" startOffset="2133" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <values xmi:type="expressions:BoolExpression" xmi:id="379">
+          <position xmi:type="position:Position" xmi:id="380" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="97" endOffset="2141" startColumn="17" endLine="97" endColumn="21" startOffset="2137" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          <type xmi:type="types:BoolType" xmi:id="381">
+            <position xmi:type="position:Position" xmi:id="382" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="97" endOffset="2141" startColumn="17" endLine="97" endColumn="21" startOffset="2137" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
           </type>
         </values>
       </value>
     </declarations>
-    <locations xmi:type="automata:Location" xmi:id="179">
-      <position xmi:type="position:Position" xmi:id="180" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="35" endOffset="925" startColumn="3" endLine="35" endColumn="10" startOffset="918" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-      <initials xmi:type="expressions:BoolExpression" xmi:id="181" value="true">
-        <position xmi:type="position:Position" xmi:id="182" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="36" endOffset="939" startColumn="5" endLine="36" endColumn="11" startOffset="933" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-        <type xmi:type="types:BoolType" xmi:id="183">
-          <position xmi:type="position:Position" xmi:id="184" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="36" endOffset="939" startColumn="5" endLine="36" endColumn="11" startOffset="933" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+    <locations xmi:type="automata:Location" xmi:id="383" name="a">
+      <position xmi:type="position:Position" xmi:id="384" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="98" endOffset="2156" startColumn="12" endLine="98" endColumn="12" startOffset="2156" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+      <edges xmi:type="automata:Edge" xmi:id="385">
+        <position xmi:type="position:Position" xmi:id="386" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="99" endOffset="2167" startColumn="5" endLine="99" endColumn="8" startOffset="2164" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <events xmi:type="automata:EdgeEvent" xmi:id="387">
+          <position xmi:type="position:Position" xmi:id="388" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="99" endOffset="2182" startColumn="10" endLine="99" endColumn="23" startOffset="2169" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          <event xmi:type="expressions:EventExpression" xmi:id="389" event="183">
+            <position xmi:type="position:Position" xmi:id="390" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="99" endOffset="2182" startColumn="10" endLine="99" endColumn="23" startOffset="2169" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="391">
+              <position xmi:type="position:Position" xmi:id="392" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="99" endOffset="2182" startColumn="10" endLine="99" endColumn="23" startOffset="2169" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            </type>
+          </event>
+        </events>
+        <updates xmi:type="automata:Assignment" xmi:id="393">
+          <position xmi:type="position:Position" xmi:id="394" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="99" endOffset="2190" startColumn="30" endLine="99" endColumn="31" startOffset="2189" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          <addressable xmi:type="expressions:DiscVariableExpression" xmi:id="395" variable="373">
+            <position xmi:type="position:Position" xmi:id="396" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="99" endOffset="2187" startColumn="28" endLine="99" endColumn="28" startOffset="2187" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="397">
+              <position xmi:type="position:Position" xmi:id="398" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="99" endOffset="2187" startColumn="28" endLine="99" endColumn="28" startOffset="2187" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            </type>
+          </addressable>
+          <value xmi:type="expressions:BoolExpression" xmi:id="399" value="true">
+            <position xmi:type="position:Position" xmi:id="400" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="99" endOffset="2195" startColumn="33" endLine="99" endColumn="36" startOffset="2192" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="401">
+              <position xmi:type="position:Position" xmi:id="402" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="99" endOffset="2195" startColumn="33" endLine="99" endColumn="36" startOffset="2192" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            </type>
+          </value>
+        </updates>
+      </edges>
+      <edges xmi:type="automata:Edge" xmi:id="403">
+        <position xmi:type="position:Position" xmi:id="404" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="100" endOffset="2206" startColumn="5" endLine="100" endColumn="8" startOffset="2203" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <events xmi:type="automata:EdgeEvent" xmi:id="405">
+          <position xmi:type="position:Position" xmi:id="406" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="100" endOffset="2220" startColumn="10" endLine="100" endColumn="22" startOffset="2208" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          <event xmi:type="expressions:EventExpression" xmi:id="407" event="185">
+            <position xmi:type="position:Position" xmi:id="408" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="100" endOffset="2220" startColumn="10" endLine="100" endColumn="22" startOffset="2208" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="409">
+              <position xmi:type="position:Position" xmi:id="410" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="100" endOffset="2220" startColumn="10" endLine="100" endColumn="22" startOffset="2208" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            </type>
+          </event>
+        </events>
+        <updates xmi:type="automata:Assignment" xmi:id="411">
+          <position xmi:type="position:Position" xmi:id="412" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="100" endOffset="2228" startColumn="29" endLine="100" endColumn="30" startOffset="2227" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          <addressable xmi:type="expressions:DiscVariableExpression" xmi:id="413" variable="373">
+            <position xmi:type="position:Position" xmi:id="414" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="100" endOffset="2225" startColumn="27" endLine="100" endColumn="27" startOffset="2225" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="415">
+              <position xmi:type="position:Position" xmi:id="416" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="100" endOffset="2225" startColumn="27" endLine="100" endColumn="27" startOffset="2225" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            </type>
+          </addressable>
+          <value xmi:type="expressions:BoolExpression" xmi:id="417">
+            <position xmi:type="position:Position" xmi:id="418" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="100" endOffset="2234" startColumn="32" endLine="100" endColumn="36" startOffset="2230" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="419">
+              <position xmi:type="position:Position" xmi:id="420" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="100" endOffset="2234" startColumn="32" endLine="100" endColumn="36" startOffset="2230" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            </type>
+          </value>
+        </updates>
+      </edges>
+      <edges xmi:type="automata:Edge" xmi:id="421" target="453">
+        <position xmi:type="position:Position" xmi:id="422" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="101" endOffset="2245" startColumn="5" endLine="101" endColumn="8" startOffset="2242" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <events xmi:type="automata:EdgeEvent" xmi:id="423">
+          <position xmi:type="position:Position" xmi:id="424" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="101" endOffset="2261" startColumn="10" endLine="101" endColumn="24" startOffset="2247" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          <event xmi:type="expressions:EventExpression" xmi:id="425" event="73">
+            <position xmi:type="position:Position" xmi:id="426" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="101" endOffset="2261" startColumn="10" endLine="101" endColumn="24" startOffset="2247" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="427">
+              <position xmi:type="position:Position" xmi:id="428" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="101" endOffset="2261" startColumn="10" endLine="101" endColumn="24" startOffset="2247" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            </type>
+          </event>
+        </events>
+        <guards xmi:type="expressions:UnaryExpression" xmi:id="429">
+          <position xmi:type="position:Position" xmi:id="430" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="101" endOffset="2270" startColumn="31" endLine="101" endColumn="33" startOffset="2268" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          <type xmi:type="types:BoolType" xmi:id="431">
+            <position xmi:type="position:Position" xmi:id="432" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="101" endOffset="2270" startColumn="31" endLine="101" endColumn="33" startOffset="2268" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          </type>
+          <child xmi:type="expressions:DiscVariableExpression" xmi:id="433" variable="373">
+            <position xmi:type="position:Position" xmi:id="434" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="101" endOffset="2272" startColumn="35" endLine="101" endColumn="35" startOffset="2272" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="435">
+              <position xmi:type="position:Position" xmi:id="436" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="101" endOffset="2272" startColumn="35" endLine="101" endColumn="35" startOffset="2272" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            </type>
+          </child>
+        </guards>
+      </edges>
+      <edges xmi:type="automata:Edge" xmi:id="437" target="531">
+        <position xmi:type="position:Position" xmi:id="438" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="102" endOffset="2290" startColumn="5" endLine="102" endColumn="8" startOffset="2287" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <events xmi:type="automata:EdgeEvent" xmi:id="439">
+          <position xmi:type="position:Position" xmi:id="440" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="102" endOffset="2306" startColumn="10" endLine="102" endColumn="24" startOffset="2292" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          <event xmi:type="expressions:EventExpression" xmi:id="441" event="81">
+            <position xmi:type="position:Position" xmi:id="442" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="102" endOffset="2306" startColumn="10" endLine="102" endColumn="24" startOffset="2292" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="443">
+              <position xmi:type="position:Position" xmi:id="444" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="102" endOffset="2306" startColumn="10" endLine="102" endColumn="24" startOffset="2292" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            </type>
+          </event>
+        </events>
+        <guards xmi:type="expressions:UnaryExpression" xmi:id="445">
+          <position xmi:type="position:Position" xmi:id="446" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="102" endOffset="2315" startColumn="31" endLine="102" endColumn="33" startOffset="2313" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          <type xmi:type="types:BoolType" xmi:id="447">
+            <position xmi:type="position:Position" xmi:id="448" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="102" endOffset="2315" startColumn="31" endLine="102" endColumn="33" startOffset="2313" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          </type>
+          <child xmi:type="expressions:DiscVariableExpression" xmi:id="449" variable="373">
+            <position xmi:type="position:Position" xmi:id="450" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="102" endOffset="2317" startColumn="35" endLine="102" endColumn="35" startOffset="2317" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="451">
+              <position xmi:type="position:Position" xmi:id="452" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="102" endOffset="2317" startColumn="35" endLine="102" endColumn="35" startOffset="2317" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            </type>
+          </child>
+        </guards>
+      </edges>
+    </locations>
+    <locations xmi:type="automata:Location" xmi:id="453" name="b">
+      <position xmi:type="position:Position" xmi:id="454" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="103" endOffset="2339" startColumn="12" endLine="103" endColumn="12" startOffset="2339" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+      <initials xmi:type="expressions:BoolExpression" xmi:id="455" value="true">
+        <position xmi:type="position:Position" xmi:id="456" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="104" endOffset="2353" startColumn="5" endLine="104" endColumn="11" startOffset="2347" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <type xmi:type="types:BoolType" xmi:id="457">
+          <position xmi:type="position:Position" xmi:id="458" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="104" endOffset="2353" startColumn="5" endLine="104" endColumn="11" startOffset="2347" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
         </type>
       </initials>
-      <edges xmi:type="automata:Edge" xmi:id="185">
-        <position xmi:type="position:Position" xmi:id="186" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="38" endOffset="963" startColumn="5" endLine="38" endColumn="8" startOffset="960" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-        <events xmi:type="automata:EdgeEvent" xmi:id="187">
-          <position xmi:type="position:Position" xmi:id="188" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="38" endOffset="972" startColumn="10" endLine="38" endColumn="17" startOffset="965" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-          <event xmi:type="expressions:EventExpression" xmi:id="189" event="9">
-            <position xmi:type="position:Position" xmi:id="190" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="38" endOffset="972" startColumn="10" endLine="38" endColumn="17" startOffset="965" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-            <type xmi:type="types:BoolType" xmi:id="191">
-              <position xmi:type="position:Position" xmi:id="192" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="38" endOffset="972" startColumn="10" endLine="38" endColumn="17" startOffset="965" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+      <edges xmi:type="automata:Edge" xmi:id="459">
+        <position xmi:type="position:Position" xmi:id="460" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="106" endOffset="2377" startColumn="5" endLine="106" endColumn="8" startOffset="2374" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <events xmi:type="automata:EdgeEvent" xmi:id="461">
+          <position xmi:type="position:Position" xmi:id="462" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="106" endOffset="2394" startColumn="10" endLine="106" endColumn="25" startOffset="2379" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          <event xmi:type="expressions:EventExpression" xmi:id="463" event="149">
+            <position xmi:type="position:Position" xmi:id="464" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="106" endOffset="2394" startColumn="10" endLine="106" endColumn="25" startOffset="2379" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="465">
+              <position xmi:type="position:Position" xmi:id="466" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="106" endOffset="2394" startColumn="10" endLine="106" endColumn="25" startOffset="2379" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
             </type>
           </event>
         </events>
-        <guards xmi:type="expressions:BinaryExpression" xmi:id="193" operator="GreaterThan">
-          <position xmi:type="position:Position" xmi:id="194" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="38" endOffset="985" startColumn="30" endLine="38" endColumn="30" startOffset="985" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-          <type xmi:type="types:BoolType" xmi:id="195">
-            <position xmi:type="position:Position" xmi:id="196" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="38" endOffset="985" startColumn="30" endLine="38" endColumn="30" startOffset="985" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <updates xmi:type="automata:Assignment" xmi:id="467">
+          <position xmi:type="position:Position" xmi:id="468" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="106" endOffset="2402" startColumn="32" endLine="106" endColumn="33" startOffset="2401" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          <addressable xmi:type="expressions:DiscVariableExpression" xmi:id="469" variable="373">
+            <position xmi:type="position:Position" xmi:id="470" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="106" endOffset="2399" startColumn="30" endLine="106" endColumn="30" startOffset="2399" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="471">
+              <position xmi:type="position:Position" xmi:id="472" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="106" endOffset="2399" startColumn="30" endLine="106" endColumn="30" startOffset="2399" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            </type>
+          </addressable>
+          <value xmi:type="expressions:BoolExpression" xmi:id="473" value="true">
+            <position xmi:type="position:Position" xmi:id="474" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="106" endOffset="2407" startColumn="35" endLine="106" endColumn="38" startOffset="2404" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="475">
+              <position xmi:type="position:Position" xmi:id="476" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="106" endOffset="2407" startColumn="35" endLine="106" endColumn="38" startOffset="2404" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            </type>
+          </value>
+        </updates>
+      </edges>
+      <edges xmi:type="automata:Edge" xmi:id="477">
+        <position xmi:type="position:Position" xmi:id="478" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="107" endOffset="2418" startColumn="5" endLine="107" endColumn="8" startOffset="2415" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <events xmi:type="automata:EdgeEvent" xmi:id="479">
+          <position xmi:type="position:Position" xmi:id="480" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="107" endOffset="2434" startColumn="10" endLine="107" endColumn="24" startOffset="2420" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          <event xmi:type="expressions:EventExpression" xmi:id="481" event="151">
+            <position xmi:type="position:Position" xmi:id="482" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="107" endOffset="2434" startColumn="10" endLine="107" endColumn="24" startOffset="2420" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="483">
+              <position xmi:type="position:Position" xmi:id="484" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="107" endOffset="2434" startColumn="10" endLine="107" endColumn="24" startOffset="2420" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            </type>
+          </event>
+        </events>
+        <updates xmi:type="automata:Assignment" xmi:id="485">
+          <position xmi:type="position:Position" xmi:id="486" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="107" endOffset="2442" startColumn="31" endLine="107" endColumn="32" startOffset="2441" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          <addressable xmi:type="expressions:DiscVariableExpression" xmi:id="487" variable="373">
+            <position xmi:type="position:Position" xmi:id="488" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="107" endOffset="2439" startColumn="29" endLine="107" endColumn="29" startOffset="2439" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="489">
+              <position xmi:type="position:Position" xmi:id="490" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="107" endOffset="2439" startColumn="29" endLine="107" endColumn="29" startOffset="2439" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            </type>
+          </addressable>
+          <value xmi:type="expressions:BoolExpression" xmi:id="491">
+            <position xmi:type="position:Position" xmi:id="492" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="107" endOffset="2448" startColumn="34" endLine="107" endColumn="38" startOffset="2444" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="493">
+              <position xmi:type="position:Position" xmi:id="494" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="107" endOffset="2448" startColumn="34" endLine="107" endColumn="38" startOffset="2444" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            </type>
+          </value>
+        </updates>
+      </edges>
+      <edges xmi:type="automata:Edge" xmi:id="495" target="383">
+        <position xmi:type="position:Position" xmi:id="496" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="108" endOffset="2459" startColumn="5" endLine="108" endColumn="8" startOffset="2456" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <events xmi:type="automata:EdgeEvent" xmi:id="497">
+          <position xmi:type="position:Position" xmi:id="498" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="108" endOffset="2475" startColumn="10" endLine="108" endColumn="24" startOffset="2461" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          <event xmi:type="expressions:EventExpression" xmi:id="499" event="75">
+            <position xmi:type="position:Position" xmi:id="500" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="108" endOffset="2475" startColumn="10" endLine="108" endColumn="24" startOffset="2461" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="501">
+              <position xmi:type="position:Position" xmi:id="502" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="108" endOffset="2475" startColumn="10" endLine="108" endColumn="24" startOffset="2461" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            </type>
+          </event>
+        </events>
+        <guards xmi:type="expressions:UnaryExpression" xmi:id="503">
+          <position xmi:type="position:Position" xmi:id="504" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="108" endOffset="2484" startColumn="31" endLine="108" endColumn="33" startOffset="2482" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          <type xmi:type="types:BoolType" xmi:id="505">
+            <position xmi:type="position:Position" xmi:id="506" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="108" endOffset="2484" startColumn="31" endLine="108" endColumn="33" startOffset="2482" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
           </type>
-          <left xmi:type="expressions:DiscVariableExpression" xmi:id="197" variable="169">
-            <position xmi:type="position:Position" xmi:id="198" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="38" endOffset="983" startColumn="24" endLine="38" endColumn="28" startOffset="979" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-            <type xmi:type="types:IntType" xmi:id="199">
-              <position xmi:type="position:Position" xmi:id="200" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="38" endOffset="983" startColumn="24" endLine="38" endColumn="28" startOffset="979" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          <child xmi:type="expressions:DiscVariableExpression" xmi:id="507" variable="373">
+            <position xmi:type="position:Position" xmi:id="508" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="108" endOffset="2486" startColumn="35" endLine="108" endColumn="35" startOffset="2486" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="509">
+              <position xmi:type="position:Position" xmi:id="510" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="108" endOffset="2486" startColumn="35" endLine="108" endColumn="35" startOffset="2486" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
             </type>
-          </left>
-          <right xmi:type="expressions:IntExpression" xmi:id="201">
-            <position xmi:type="position:Position" xmi:id="202" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="38" endOffset="987" startColumn="32" endLine="38" endColumn="32" startOffset="987" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-            <type xmi:type="types:IntType" xmi:id="203" lower="0" upper="0">
-              <position xmi:type="position:Position" xmi:id="204" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="38" endOffset="987" startColumn="32" endLine="38" endColumn="32" startOffset="987" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-            </type>
-          </right>
+          </child>
         </guards>
-        <updates xmi:type="automata:Assignment" xmi:id="205">
-          <position xmi:type="position:Position" xmi:id="206" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="38" endOffset="999" startColumn="43" endLine="38" endColumn="44" startOffset="998" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-          <addressable xmi:type="expressions:DiscVariableExpression" xmi:id="207" variable="169">
-            <position xmi:type="position:Position" xmi:id="208" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="38" endOffset="996" startColumn="37" endLine="38" endColumn="41" startOffset="992" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-            <type xmi:type="types:IntType" xmi:id="209">
-              <position xmi:type="position:Position" xmi:id="210" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="38" endOffset="996" startColumn="37" endLine="38" endColumn="41" startOffset="992" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-            </type>
-          </addressable>
-          <value xmi:type="expressions:IntExpression" xmi:id="211">
-            <position xmi:type="position:Position" xmi:id="212" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="38" endOffset="1001" startColumn="46" endLine="38" endColumn="46" startOffset="1001" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-            <type xmi:type="types:IntType" xmi:id="213" lower="0" upper="0">
-              <position xmi:type="position:Position" xmi:id="214" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="38" endOffset="1001" startColumn="46" endLine="38" endColumn="46" startOffset="1001" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-            </type>
-          </value>
-        </updates>
       </edges>
-      <edges xmi:type="automata:Edge" xmi:id="215">
-        <position xmi:type="position:Position" xmi:id="216" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="39" endOffset="1012" startColumn="5" endLine="39" endColumn="8" startOffset="1009" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-        <events xmi:type="automata:EdgeEvent" xmi:id="217">
-          <position xmi:type="position:Position" xmi:id="218" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="39" endOffset="1021" startColumn="10" endLine="39" endColumn="17" startOffset="1014" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-          <event xmi:type="expressions:EventExpression" xmi:id="219" event="7">
-            <position xmi:type="position:Position" xmi:id="220" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="39" endOffset="1021" startColumn="10" endLine="39" endColumn="17" startOffset="1014" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-            <type xmi:type="types:BoolType" xmi:id="221">
-              <position xmi:type="position:Position" xmi:id="222" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="39" endOffset="1021" startColumn="10" endLine="39" endColumn="17" startOffset="1014" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+      <edges xmi:type="automata:Edge" xmi:id="511" target="531">
+        <position xmi:type="position:Position" xmi:id="512" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="109" endOffset="2504" startColumn="5" endLine="109" endColumn="8" startOffset="2501" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <events xmi:type="automata:EdgeEvent" xmi:id="513">
+          <position xmi:type="position:Position" xmi:id="514" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="109" endOffset="2520" startColumn="10" endLine="109" endColumn="24" startOffset="2506" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          <event xmi:type="expressions:EventExpression" xmi:id="515" event="77">
+            <position xmi:type="position:Position" xmi:id="516" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="109" endOffset="2520" startColumn="10" endLine="109" endColumn="24" startOffset="2506" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="517">
+              <position xmi:type="position:Position" xmi:id="518" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="109" endOffset="2520" startColumn="10" endLine="109" endColumn="24" startOffset="2506" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
             </type>
           </event>
         </events>
-        <guards xmi:type="expressions:BinaryExpression" xmi:id="223" operator="GreaterThan">
-          <position xmi:type="position:Position" xmi:id="224" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="39" endOffset="1034" startColumn="30" endLine="39" endColumn="30" startOffset="1034" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-          <type xmi:type="types:BoolType" xmi:id="225">
-            <position xmi:type="position:Position" xmi:id="226" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="39" endOffset="1034" startColumn="30" endLine="39" endColumn="30" startOffset="1034" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <guards xmi:type="expressions:UnaryExpression" xmi:id="519">
+          <position xmi:type="position:Position" xmi:id="520" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="109" endOffset="2529" startColumn="31" endLine="109" endColumn="33" startOffset="2527" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          <type xmi:type="types:BoolType" xmi:id="521">
+            <position xmi:type="position:Position" xmi:id="522" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="109" endOffset="2529" startColumn="31" endLine="109" endColumn="33" startOffset="2527" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
           </type>
-          <left xmi:type="expressions:DiscVariableExpression" xmi:id="227" variable="169">
-            <position xmi:type="position:Position" xmi:id="228" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="39" endOffset="1032" startColumn="24" endLine="39" endColumn="28" startOffset="1028" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-            <type xmi:type="types:IntType" xmi:id="229">
-              <position xmi:type="position:Position" xmi:id="230" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="39" endOffset="1032" startColumn="24" endLine="39" endColumn="28" startOffset="1028" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          <child xmi:type="expressions:DiscVariableExpression" xmi:id="523" variable="373">
+            <position xmi:type="position:Position" xmi:id="524" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="109" endOffset="2531" startColumn="35" endLine="109" endColumn="35" startOffset="2531" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="525">
+              <position xmi:type="position:Position" xmi:id="526" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="109" endOffset="2531" startColumn="35" endLine="109" endColumn="35" startOffset="2531" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
             </type>
-          </left>
-          <right xmi:type="expressions:IntExpression" xmi:id="231" value="3">
-            <position xmi:type="position:Position" xmi:id="232" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="39" endOffset="1036" startColumn="32" endLine="39" endColumn="32" startOffset="1036" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-            <type xmi:type="types:IntType" xmi:id="233" lower="3" upper="3">
-              <position xmi:type="position:Position" xmi:id="234" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="39" endOffset="1036" startColumn="32" endLine="39" endColumn="32" startOffset="1036" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-            </type>
-          </right>
+          </child>
         </guards>
-        <updates xmi:type="automata:Assignment" xmi:id="235">
-          <position xmi:type="position:Position" xmi:id="236" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="39" endOffset="1048" startColumn="43" endLine="39" endColumn="44" startOffset="1047" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-          <addressable xmi:type="expressions:DiscVariableExpression" xmi:id="237" variable="169">
-            <position xmi:type="position:Position" xmi:id="238" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="39" endOffset="1045" startColumn="37" endLine="39" endColumn="41" startOffset="1041" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-            <type xmi:type="types:IntType" xmi:id="239">
-              <position xmi:type="position:Position" xmi:id="240" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="39" endOffset="1045" startColumn="37" endLine="39" endColumn="41" startOffset="1041" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-            </type>
-          </addressable>
-          <value xmi:type="expressions:IntExpression" xmi:id="241">
-            <position xmi:type="position:Position" xmi:id="242" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="39" endOffset="1050" startColumn="46" endLine="39" endColumn="46" startOffset="1050" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-            <type xmi:type="types:IntType" xmi:id="243" lower="0" upper="0">
-              <position xmi:type="position:Position" xmi:id="244" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="39" endOffset="1050" startColumn="46" endLine="39" endColumn="46" startOffset="1050" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-            </type>
-          </value>
-        </updates>
       </edges>
-      <edges xmi:type="automata:Edge" xmi:id="245">
-        <position xmi:type="position:Position" xmi:id="246" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="40" endOffset="1061" startColumn="5" endLine="40" endColumn="8" startOffset="1058" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-        <events xmi:type="automata:EdgeEvent" xmi:id="247">
-          <position xmi:type="position:Position" xmi:id="248" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="40" endOffset="1072" startColumn="10" endLine="40" endColumn="19" startOffset="1063" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-          <event xmi:type="expressions:EventExpression" xmi:id="249" event="3">
-            <position xmi:type="position:Position" xmi:id="250" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="40" endOffset="1072" startColumn="10" endLine="40" endColumn="19" startOffset="1063" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-            <type xmi:type="types:BoolType" xmi:id="251">
-              <position xmi:type="position:Position" xmi:id="252" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="40" endOffset="1072" startColumn="10" endLine="40" endColumn="19" startOffset="1063" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-            </type>
-          </event>
-        </events>
-        <updates xmi:type="automata:Assignment" xmi:id="253">
-          <position xmi:type="position:Position" xmi:id="254" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="40" endOffset="1084" startColumn="30" endLine="40" endColumn="31" startOffset="1083" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-          <addressable xmi:type="expressions:DiscVariableExpression" xmi:id="255" variable="169">
-            <position xmi:type="position:Position" xmi:id="256" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="40" endOffset="1081" startColumn="24" endLine="40" endColumn="28" startOffset="1077" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-            <type xmi:type="types:IntType" xmi:id="257">
-              <position xmi:type="position:Position" xmi:id="258" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="40" endOffset="1081" startColumn="24" endLine="40" endColumn="28" startOffset="1077" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-            </type>
-          </addressable>
-          <value xmi:type="expressions:BinaryExpression" xmi:id="259" operator="Addition">
-            <position xmi:type="position:Position" xmi:id="260" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="40" endOffset="1092" startColumn="39" endLine="40" endColumn="39" startOffset="1092" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-            <type xmi:type="types:IntType" xmi:id="261">
-              <position xmi:type="position:Position" xmi:id="262" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="40" endOffset="1092" startColumn="39" endLine="40" endColumn="39" startOffset="1092" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-            </type>
-            <left xmi:type="expressions:DiscVariableExpression" xmi:id="263" variable="169">
-              <position xmi:type="position:Position" xmi:id="264" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="40" endOffset="1090" startColumn="33" endLine="40" endColumn="37" startOffset="1086" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-              <type xmi:type="types:IntType" xmi:id="265">
-                <position xmi:type="position:Position" xmi:id="266" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="40" endOffset="1090" startColumn="33" endLine="40" endColumn="37" startOffset="1086" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-              </type>
-            </left>
-            <right xmi:type="expressions:IntExpression" xmi:id="267" value="1">
-              <position xmi:type="position:Position" xmi:id="268" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="40" endOffset="1094" startColumn="41" endLine="40" endColumn="41" startOffset="1094" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-              <type xmi:type="types:IntType" xmi:id="269" lower="1" upper="1">
-                <position xmi:type="position:Position" xmi:id="270" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="40" endOffset="1094" startColumn="41" endLine="40" endColumn="41" startOffset="1094" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-              </type>
-            </right>
-          </value>
-        </updates>
-      </edges>
-      <edges xmi:type="automata:Edge" xmi:id="271">
-        <position xmi:type="position:Position" xmi:id="272" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="41" endOffset="1105" startColumn="5" endLine="41" endColumn="8" startOffset="1102" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-        <events xmi:type="automata:EdgeEvent" xmi:id="273">
-          <position xmi:type="position:Position" xmi:id="274" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="41" endOffset="1116" startColumn="10" endLine="41" endColumn="19" startOffset="1107" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-          <event xmi:type="expressions:EventExpression" xmi:id="275" event="5">
-            <position xmi:type="position:Position" xmi:id="276" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="41" endOffset="1116" startColumn="10" endLine="41" endColumn="19" startOffset="1107" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-            <type xmi:type="types:BoolType" xmi:id="277">
-              <position xmi:type="position:Position" xmi:id="278" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="41" endOffset="1116" startColumn="10" endLine="41" endColumn="19" startOffset="1107" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-            </type>
-          </event>
-        </events>
-        <guards xmi:type="expressions:BinaryExpression" xmi:id="279" operator="GreaterThan">
-          <position xmi:type="position:Position" xmi:id="280" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="41" endOffset="1129" startColumn="32" endLine="41" endColumn="32" startOffset="1129" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-          <type xmi:type="types:BoolType" xmi:id="281">
-            <position xmi:type="position:Position" xmi:id="282" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="41" endOffset="1129" startColumn="32" endLine="41" endColumn="32" startOffset="1129" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-          </type>
-          <left xmi:type="expressions:DiscVariableExpression" xmi:id="283" variable="169">
-            <position xmi:type="position:Position" xmi:id="284" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="41" endOffset="1127" startColumn="26" endLine="41" endColumn="30" startOffset="1123" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-            <type xmi:type="types:IntType" xmi:id="285">
-              <position xmi:type="position:Position" xmi:id="286" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="41" endOffset="1127" startColumn="26" endLine="41" endColumn="30" startOffset="1123" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-            </type>
-          </left>
-          <right xmi:type="expressions:IntExpression" xmi:id="287">
-            <position xmi:type="position:Position" xmi:id="288" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="41" endOffset="1131" startColumn="34" endLine="41" endColumn="34" startOffset="1131" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-            <type xmi:type="types:IntType" xmi:id="289" lower="0" upper="0">
-              <position xmi:type="position:Position" xmi:id="290" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="41" endOffset="1131" startColumn="34" endLine="41" endColumn="34" startOffset="1131" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-            </type>
-          </right>
-        </guards>
-        <updates xmi:type="automata:Assignment" xmi:id="291">
-          <position xmi:type="position:Position" xmi:id="292" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="41" endOffset="1143" startColumn="45" endLine="41" endColumn="46" startOffset="1142" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-          <addressable xmi:type="expressions:DiscVariableExpression" xmi:id="293" variable="169">
-            <position xmi:type="position:Position" xmi:id="294" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="41" endOffset="1140" startColumn="39" endLine="41" endColumn="43" startOffset="1136" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-            <type xmi:type="types:IntType" xmi:id="295">
-              <position xmi:type="position:Position" xmi:id="296" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="41" endOffset="1140" startColumn="39" endLine="41" endColumn="43" startOffset="1136" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-            </type>
-          </addressable>
-          <value xmi:type="expressions:BinaryExpression" xmi:id="297" operator="Subtraction">
-            <position xmi:type="position:Position" xmi:id="298" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="41" endOffset="1151" startColumn="54" endLine="41" endColumn="54" startOffset="1151" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-            <type xmi:type="types:IntType" xmi:id="299">
-              <position xmi:type="position:Position" xmi:id="300" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="41" endOffset="1151" startColumn="54" endLine="41" endColumn="54" startOffset="1151" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-            </type>
-            <left xmi:type="expressions:DiscVariableExpression" xmi:id="301" variable="169">
-              <position xmi:type="position:Position" xmi:id="302" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="41" endOffset="1149" startColumn="48" endLine="41" endColumn="52" startOffset="1145" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-              <type xmi:type="types:IntType" xmi:id="303">
-                <position xmi:type="position:Position" xmi:id="304" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="41" endOffset="1149" startColumn="48" endLine="41" endColumn="52" startOffset="1145" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-              </type>
-            </left>
-            <right xmi:type="expressions:IntExpression" xmi:id="305" value="1">
-              <position xmi:type="position:Position" xmi:id="306" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="41" endOffset="1153" startColumn="56" endLine="41" endColumn="56" startOffset="1153" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-              <type xmi:type="types:IntType" xmi:id="307" lower="1" upper="1">
-                <position xmi:type="position:Position" xmi:id="308" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="41" endOffset="1153" startColumn="56" endLine="41" endColumn="56" startOffset="1153" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-              </type>
-            </right>
-          </value>
-        </updates>
-      </edges>
-      <markeds xmi:type="expressions:BoolExpression" xmi:id="309" value="true">
-        <position xmi:type="position:Position" xmi:id="310" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="37" endOffset="952" startColumn="5" endLine="37" endColumn="10" startOffset="947" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
-        <type xmi:type="types:BoolType" xmi:id="311">
-          <position xmi:type="position:Position" xmi:id="312" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="37" endOffset="952" startColumn="5" endLine="37" endColumn="10" startOffset="947" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+      <markeds xmi:type="expressions:BoolExpression" xmi:id="527" value="true">
+        <position xmi:type="position:Position" xmi:id="528" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="105" endOffset="2366" startColumn="5" endLine="105" endColumn="10" startOffset="2361" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <type xmi:type="types:BoolType" xmi:id="529">
+          <position xmi:type="position:Position" xmi:id="530" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="105" endOffset="2366" startColumn="5" endLine="105" endColumn="10" startOffset="2361" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
         </type>
       </markeds>
+    </locations>
+    <locations xmi:type="automata:Location" xmi:id="531" name="c">
+      <position xmi:type="position:Position" xmi:id="532" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="110" endOffset="2553" startColumn="12" endLine="110" endColumn="12" startOffset="2553" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+      <edges xmi:type="automata:Edge" xmi:id="533">
+        <position xmi:type="position:Position" xmi:id="534" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="111" endOffset="2564" startColumn="5" endLine="111" endColumn="8" startOffset="2561" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <events xmi:type="automata:EdgeEvent" xmi:id="535">
+          <position xmi:type="position:Position" xmi:id="536" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="111" endOffset="2587" startColumn="10" endLine="111" endColumn="31" startOffset="2566" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          <event xmi:type="expressions:EventExpression" xmi:id="537" event="217">
+            <position xmi:type="position:Position" xmi:id="538" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="111" endOffset="2587" startColumn="10" endLine="111" endColumn="31" startOffset="2566" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="539">
+              <position xmi:type="position:Position" xmi:id="540" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="111" endOffset="2587" startColumn="10" endLine="111" endColumn="31" startOffset="2566" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            </type>
+          </event>
+        </events>
+        <updates xmi:type="automata:Assignment" xmi:id="541">
+          <position xmi:type="position:Position" xmi:id="542" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="111" endOffset="2595" startColumn="38" endLine="111" endColumn="39" startOffset="2594" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          <addressable xmi:type="expressions:DiscVariableExpression" xmi:id="543" variable="373">
+            <position xmi:type="position:Position" xmi:id="544" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="111" endOffset="2592" startColumn="36" endLine="111" endColumn="36" startOffset="2592" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="545">
+              <position xmi:type="position:Position" xmi:id="546" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="111" endOffset="2592" startColumn="36" endLine="111" endColumn="36" startOffset="2592" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            </type>
+          </addressable>
+          <value xmi:type="expressions:BoolExpression" xmi:id="547" value="true">
+            <position xmi:type="position:Position" xmi:id="548" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="111" endOffset="2600" startColumn="41" endLine="111" endColumn="44" startOffset="2597" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="549">
+              <position xmi:type="position:Position" xmi:id="550" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="111" endOffset="2600" startColumn="41" endLine="111" endColumn="44" startOffset="2597" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            </type>
+          </value>
+        </updates>
+      </edges>
+      <edges xmi:type="automata:Edge" xmi:id="551">
+        <position xmi:type="position:Position" xmi:id="552" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="112" endOffset="2611" startColumn="5" endLine="112" endColumn="8" startOffset="2608" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <events xmi:type="automata:EdgeEvent" xmi:id="553">
+          <position xmi:type="position:Position" xmi:id="554" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="112" endOffset="2633" startColumn="10" endLine="112" endColumn="30" startOffset="2613" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          <event xmi:type="expressions:EventExpression" xmi:id="555" event="219">
+            <position xmi:type="position:Position" xmi:id="556" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="112" endOffset="2633" startColumn="10" endLine="112" endColumn="30" startOffset="2613" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="557">
+              <position xmi:type="position:Position" xmi:id="558" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="112" endOffset="2633" startColumn="10" endLine="112" endColumn="30" startOffset="2613" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            </type>
+          </event>
+        </events>
+        <updates xmi:type="automata:Assignment" xmi:id="559">
+          <position xmi:type="position:Position" xmi:id="560" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="112" endOffset="2641" startColumn="37" endLine="112" endColumn="38" startOffset="2640" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          <addressable xmi:type="expressions:DiscVariableExpression" xmi:id="561" variable="373">
+            <position xmi:type="position:Position" xmi:id="562" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="112" endOffset="2638" startColumn="35" endLine="112" endColumn="35" startOffset="2638" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="563">
+              <position xmi:type="position:Position" xmi:id="564" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="112" endOffset="2638" startColumn="35" endLine="112" endColumn="35" startOffset="2638" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            </type>
+          </addressable>
+          <value xmi:type="expressions:BoolExpression" xmi:id="565" value="true">
+            <position xmi:type="position:Position" xmi:id="566" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="112" endOffset="2646" startColumn="40" endLine="112" endColumn="43" startOffset="2643" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="567">
+              <position xmi:type="position:Position" xmi:id="568" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="112" endOffset="2646" startColumn="40" endLine="112" endColumn="43" startOffset="2643" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            </type>
+          </value>
+        </updates>
+      </edges>
+      <edges xmi:type="automata:Edge" xmi:id="569" target="453">
+        <position xmi:type="position:Position" xmi:id="570" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="113" endOffset="2657" startColumn="5" endLine="113" endColumn="8" startOffset="2654" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <events xmi:type="automata:EdgeEvent" xmi:id="571">
+          <position xmi:type="position:Position" xmi:id="572" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="113" endOffset="2673" startColumn="10" endLine="113" endColumn="24" startOffset="2659" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          <event xmi:type="expressions:EventExpression" xmi:id="573" event="79">
+            <position xmi:type="position:Position" xmi:id="574" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="113" endOffset="2673" startColumn="10" endLine="113" endColumn="24" startOffset="2659" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="575">
+              <position xmi:type="position:Position" xmi:id="576" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="113" endOffset="2673" startColumn="10" endLine="113" endColumn="24" startOffset="2659" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            </type>
+          </event>
+        </events>
+        <guards xmi:type="expressions:UnaryExpression" xmi:id="577">
+          <position xmi:type="position:Position" xmi:id="578" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="113" endOffset="2682" startColumn="31" endLine="113" endColumn="33" startOffset="2680" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          <type xmi:type="types:BoolType" xmi:id="579">
+            <position xmi:type="position:Position" xmi:id="580" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="113" endOffset="2682" startColumn="31" endLine="113" endColumn="33" startOffset="2680" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          </type>
+          <child xmi:type="expressions:DiscVariableExpression" xmi:id="581" variable="373">
+            <position xmi:type="position:Position" xmi:id="582" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="113" endOffset="2684" startColumn="35" endLine="113" endColumn="35" startOffset="2684" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="583">
+              <position xmi:type="position:Position" xmi:id="584" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="113" endOffset="2684" startColumn="35" endLine="113" endColumn="35" startOffset="2684" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            </type>
+          </child>
+        </guards>
+      </edges>
+      <edges xmi:type="automata:Edge" xmi:id="585" target="383">
+        <position xmi:type="position:Position" xmi:id="586" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="114" endOffset="2702" startColumn="5" endLine="114" endColumn="8" startOffset="2699" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+        <events xmi:type="automata:EdgeEvent" xmi:id="587">
+          <position xmi:type="position:Position" xmi:id="588" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="114" endOffset="2718" startColumn="10" endLine="114" endColumn="24" startOffset="2704" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          <event xmi:type="expressions:EventExpression" xmi:id="589" event="83">
+            <position xmi:type="position:Position" xmi:id="590" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="114" endOffset="2718" startColumn="10" endLine="114" endColumn="24" startOffset="2704" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="591">
+              <position xmi:type="position:Position" xmi:id="592" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="114" endOffset="2718" startColumn="10" endLine="114" endColumn="24" startOffset="2704" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            </type>
+          </event>
+        </events>
+        <guards xmi:type="expressions:UnaryExpression" xmi:id="593">
+          <position xmi:type="position:Position" xmi:id="594" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="114" endOffset="2727" startColumn="31" endLine="114" endColumn="33" startOffset="2725" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          <type xmi:type="types:BoolType" xmi:id="595">
+            <position xmi:type="position:Position" xmi:id="596" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="114" endOffset="2727" startColumn="31" endLine="114" endColumn="33" startOffset="2725" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+          </type>
+          <child xmi:type="expressions:DiscVariableExpression" xmi:id="597" variable="373">
+            <position xmi:type="position:Position" xmi:id="598" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="114" endOffset="2729" startColumn="35" endLine="114" endColumn="35" startOffset="2729" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            <type xmi:type="types:BoolType" xmi:id="599">
+              <position xmi:type="position:Position" xmi:id="600" source="File &quot;../data/tests\dev_transformed.cif&quot;: " startLine="114" endOffset="2729" startColumn="35" endLine="114" endColumn="35" startOffset="2729" location="C:\Users\rober\Documents\studie\afstuderen\development\simulator_via_code_generator\data\tests\dev_transformed.cif"/>
+            </type>
+          </child>
+        </guards>
+      </edges>
     </locations>
   </components>
 </cif:Specification>
 `;
-const eventMap = ['insertCoin', 'refill', 'returnCoin', 'select40', 'select90', 'dispense', 'openDoor'];
+const eventMap = ['conveyor.enterConveyor', 'conveyor.leaveConveyor', 'drill.startDrill', 'drill.stopDrill', 'machineHead.D2M', 'machineHead.D2P', 'machineHead.M2D', 'machineHead.M2P', 'machineHead.P2D', 'machineHead.P2M', 'machineStand.moveDown', 'machineStand.moveUp', 'mill.startMill', 'mill.stopMill', 'polisher.startPolisher', 'polisher.stopPolisher'];

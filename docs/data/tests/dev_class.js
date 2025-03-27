@@ -5,26 +5,47 @@
 class spec_class {
     /** specEnum declaration. It contains the single merged enum from the CIF model. */
     specEnum = Object.freeze({
-        /** Literal "full". */
-        _full: Symbol("full"),
+        /** Literal "a". */
+        _a: Symbol("a"),
 
-        /** Literal "isEmpty". */
-        _isEmpty: Symbol("isEmpty"),
+        /** Literal "b". */
+        _b: Symbol("b"),
 
-        /** Literal "ready". */
-        _ready: Symbol("ready"),
+        /** Literal "c". */
+        _c: Symbol("c"),
 
-        /** Literal "washAt40". */
-        _washAt40: Symbol("washAt40"),
+        /** Literal "d". */
+        _d: Symbol("d"),
 
-        /** Literal "washAt90". */
-        _washAt90: Symbol("washAt90"),
+        /** Literal "down". */
+        _down: Symbol("down"),
 
-        /** Literal "washing40". */
-        _washing40: Symbol("washing40"),
+        /** Literal "e". */
+        _e: Symbol("e"),
 
-        /** Literal "washing90". */
-        _washing90: Symbol("washing90")
+        /** Literal "noProduct". */
+        _noProduct: Symbol("noProduct"),
+
+        /** Literal "off". */
+        _off: Symbol("off"),
+
+        /** Literal "on". */
+        _on: Symbol("on"),
+
+        /** Literal "opD". */
+        _opD: Symbol("opD"),
+
+        /** Literal "opM". */
+        _opM: Symbol("opM"),
+
+        /** Literal "opP". */
+        _opP: Symbol("opP"),
+
+        /** Literal "productPresent". */
+        _productPresent: Symbol("productPresent"),
+
+        /** Literal "up". */
+        _up: Symbol("up")
     })
 
     /** Should execution timing information be provided? */
@@ -53,13 +74,22 @@ class spec_class {
 
     /** The names of all the events. */
     EVENT_NAMES = [
-        "dispense",
-        "insertCoin",
-        "openDoor",
-        "refill",
-        "returnCoin",
-        "select40",
-        "select90"
+        "conveyor.enterConveyor",
+        "conveyor.leaveConveyor",
+        "drill.startDrill",
+        "drill.stopDrill",
+        "machineHead.D2M",
+        "machineHead.D2P",
+        "machineHead.M2D",
+        "machineHead.M2P",
+        "machineHead.P2D",
+        "machineHead.P2M",
+        "machineStand.moveDown",
+        "machineStand.moveUp",
+        "mill.startMill",
+        "mill.stopMill",
+        "polisher.startPolisher",
+        "polisher.stopPolisher"
     ];
 
 
@@ -97,14 +127,35 @@ class spec_class {
     targetMilli;
 
 
-    /** Discrete variable "coin_collector.coins". */
-    coin_collector_coins_;
+    /** Discrete variable "conveyor". */
+    conveyor_;
 
-    /** Discrete variable "detergent_dispenser". */
-    detergent_dispenser_;
+    /** Discrete variable "drill". */
+    drill_;
 
-    /** Discrete variable "washer". */
-    washer_;
+    /** Discrete variable "machineHead". */
+    machineHead_;
+
+    /** Discrete variable "machineStand". */
+    machineStand_;
+
+    /** Discrete variable "mill". */
+    mill_;
+
+    /** Discrete variable "polisher". */
+    polisher_;
+
+    /** Discrete variable "r_A". */
+    r_A_;
+
+    /** Discrete variable "r_B.x". */
+    r_B_x_;
+
+    /** Discrete variable "r_B". */
+    r_B_;
+
+    /** Discrete variable "r_C". */
+    r_C_;
 
 
     /** SVG output elements. */
@@ -235,20 +286,53 @@ class spec_class {
             // Try to execute an edge for each event.
             var edgeExecuted = false;
 
-            // Event "insertCoin".
+            // Event "conveyor.enterConveyor".
             edgeExecuted |= this.execEdge0();
 
-            // Event "refill".
+            // Event "conveyor.leaveConveyor".
             edgeExecuted |= this.execEdge1();
 
-            // Event "returnCoin".
+            // Event "drill.startDrill".
             edgeExecuted |= this.execEdge2();
 
-            // Event "select40".
+            // Event "drill.stopDrill".
             edgeExecuted |= this.execEdge3();
 
-            // Event "select90".
+            // Event "machineHead.D2M".
             edgeExecuted |= this.execEdge4();
+
+            // Event "machineHead.D2P".
+            edgeExecuted |= this.execEdge5();
+
+            // Event "machineHead.M2D".
+            edgeExecuted |= this.execEdge6();
+
+            // Event "machineHead.M2P".
+            edgeExecuted |= this.execEdge7();
+
+            // Event "machineHead.P2D".
+            edgeExecuted |= this.execEdge8();
+
+            // Event "machineHead.P2M".
+            edgeExecuted |= this.execEdge9();
+
+            // Event "machineStand.moveDown".
+            edgeExecuted |= this.execEdge10();
+
+            // Event "machineStand.moveUp".
+            edgeExecuted |= this.execEdge11();
+
+            // Event "mill.startMill".
+            edgeExecuted |= this.execEdge12();
+
+            // Event "mill.stopMill".
+            edgeExecuted |= this.execEdge13();
+
+            // Event "polisher.startPolisher".
+            edgeExecuted |= this.execEdge14();
+
+            // Event "polisher.stopPolisher".
+            edgeExecuted |= this.execEdge15();
 
             // Stop if no edge was executed.
             if (!edgeExecuted) {
@@ -261,11 +345,6 @@ class spec_class {
             // Try to execute an edge for each event.
             var edgeExecuted = false;
 
-            // Event "dispense".
-            edgeExecuted |= this.execEdge5();
-
-            // Event "openDoor".
-            edgeExecuted |= this.execEdge6();
 
             // Stop if no edge was executed.
             if (!edgeExecuted) {
@@ -357,124 +436,12 @@ class spec_class {
     }
 
     /**
-     * Execute code for edge with index 0 and event "insertCoin".
+     * Execute code for edge with index 0 and event "conveyor.enterConveyor".
      *
      * @return 'true' if the edge was executed, 'false' otherwise.
      */
     execEdge0() {
-
-        if (this.doInfoPrintOutput) this.printOutput(1, true);
-        if (this.doInfoEvent) this.infoEvent(1, true);
-
-        spec.coin_collector_coins_ = specUtils.addInt(spec.coin_collector_coins_, 1);
-
-        if (this.doInfoEvent) this.infoEvent(1, false);
-        if (this.doInfoPrintOutput) this.printOutput(1, false);
-        if (this.doStateOutput || this.doTransitionOutput) this.log('');
-        return true;
-    }
-
-    /**
-     * Execute code for edge with index 1 and event "refill".
-     *
-     * @return 'true' if the edge was executed, 'false' otherwise.
-     */
-    execEdge1() {
-        var guard = (spec.detergent_dispenser_) == (spec.specEnum._isEmpty);
-
-        if (!guard) {
-            return false;
-        }
-
-        if (this.doInfoPrintOutput) this.printOutput(3, true);
-        if (this.doInfoEvent) this.infoEvent(3, true);
-
-        spec.detergent_dispenser_ = spec.specEnum._full;
-
-        if (this.doInfoEvent) this.infoEvent(3, false);
-        if (this.doInfoPrintOutput) this.printOutput(3, false);
-        if (this.doStateOutput || this.doTransitionOutput) this.log('');
-        return true;
-    }
-
-    /**
-     * Execute code for edge with index 2 and event "returnCoin".
-     *
-     * @return 'true' if the edge was executed, 'false' otherwise.
-     */
-    execEdge2() {
-        var guard = (spec.coin_collector_coins_) > (0);
-
-        if (!guard) {
-            return false;
-        }
-
-        if (this.doInfoPrintOutput) this.printOutput(4, true);
-        if (this.doInfoEvent) this.infoEvent(4, true);
-
-        spec.coin_collector_coins_ = specUtils.subtractInt(spec.coin_collector_coins_, 1);
-
-        if (this.doInfoEvent) this.infoEvent(4, false);
-        if (this.doInfoPrintOutput) this.printOutput(4, false);
-        if (this.doStateOutput || this.doTransitionOutput) this.log('');
-        return true;
-    }
-
-    /**
-     * Execute code for edge with index 3 and event "select40".
-     *
-     * @return 'true' if the edge was executed, 'false' otherwise.
-     */
-    execEdge3() {
-        var guard = ((spec.coin_collector_coins_) > (0)) && (((spec.washer_) == (spec.specEnum._ready)) && ((specUtils.equalObjs(spec.coin_collector_coins_, 2)) && ((spec.detergent_dispenser_) == (spec.specEnum._full))));
-
-        if (!guard) {
-            return false;
-        }
-
-        if (this.doInfoPrintOutput) this.printOutput(5, true);
-        if (this.doInfoEvent) this.infoEvent(5, true);
-
-        spec.coin_collector_coins_ = 0;
-        spec.washer_ = spec.specEnum._washAt40;
-
-        if (this.doInfoEvent) this.infoEvent(5, false);
-        if (this.doInfoPrintOutput) this.printOutput(5, false);
-        if (this.doStateOutput || this.doTransitionOutput) this.log('');
-        return true;
-    }
-
-    /**
-     * Execute code for edge with index 4 and event "select90".
-     *
-     * @return 'true' if the edge was executed, 'false' otherwise.
-     */
-    execEdge4() {
-        var guard = ((spec.coin_collector_coins_) > (3)) && (((spec.washer_) == (spec.specEnum._ready)) && ((specUtils.equalObjs(spec.coin_collector_coins_, 3)) && ((spec.detergent_dispenser_) == (spec.specEnum._full))));
-
-        if (!guard) {
-            return false;
-        }
-
-        if (this.doInfoPrintOutput) this.printOutput(6, true);
-        if (this.doInfoEvent) this.infoEvent(6, true);
-
-        spec.coin_collector_coins_ = 0;
-        spec.washer_ = spec.specEnum._washAt90;
-
-        if (this.doInfoEvent) this.infoEvent(6, false);
-        if (this.doInfoPrintOutput) this.printOutput(6, false);
-        if (this.doStateOutput || this.doTransitionOutput) this.log('');
-        return true;
-    }
-
-    /**
-     * Execute code for edge with index 5 and event "dispense".
-     *
-     * @return 'true' if the edge was executed, 'false' otherwise.
-     */
-    execEdge5() {
-        var guard = ((spec.detergent_dispenser_) == (spec.specEnum._full)) && (((spec.washer_) == (spec.specEnum._washAt90)) || ((spec.washer_) == (spec.specEnum._washAt40)));
+        var guard = ((spec.conveyor_) == (spec.specEnum._noProduct)) && ((spec.r_A_) == (spec.specEnum._a));
 
         if (!guard) {
             return false;
@@ -483,12 +450,8 @@ class spec_class {
         if (this.doInfoPrintOutput) this.printOutput(0, true);
         if (this.doInfoEvent) this.infoEvent(0, true);
 
-        spec.detergent_dispenser_ = spec.specEnum._isEmpty;
-        if ((spec.washer_) == (spec.specEnum._washAt90)) {
-            spec.washer_ = spec.specEnum._washing90;
-        } else if ((spec.washer_) == (spec.specEnum._washAt40)) {
-            spec.washer_ = spec.specEnum._washing40;
-        }
+        spec.conveyor_ = spec.specEnum._productPresent;
+        spec.r_A_ = spec.specEnum._b;
 
         if (this.doInfoEvent) this.infoEvent(0, false);
         if (this.doInfoPrintOutput) this.printOutput(0, false);
@@ -497,12 +460,36 @@ class spec_class {
     }
 
     /**
-     * Execute code for edge with index 6 and event "openDoor".
+     * Execute code for edge with index 1 and event "conveyor.leaveConveyor".
      *
      * @return 'true' if the edge was executed, 'false' otherwise.
      */
-    execEdge6() {
-        var guard = ((spec.washer_) == (spec.specEnum._ready)) || (((spec.washer_) == (spec.specEnum._washing90)) || ((spec.washer_) == (spec.specEnum._washing40)));
+    execEdge1() {
+        var guard = ((spec.conveyor_) == (spec.specEnum._productPresent)) && ((spec.r_A_) == (spec.specEnum._b));
+
+        if (!guard) {
+            return false;
+        }
+
+        if (this.doInfoPrintOutput) this.printOutput(1, true);
+        if (this.doInfoEvent) this.infoEvent(1, true);
+
+        spec.conveyor_ = spec.specEnum._noProduct;
+        spec.r_A_ = spec.specEnum._a;
+
+        if (this.doInfoEvent) this.infoEvent(1, false);
+        if (this.doInfoPrintOutput) this.printOutput(1, false);
+        if (this.doStateOutput || this.doTransitionOutput) this.log('');
+        return true;
+    }
+
+    /**
+     * Execute code for edge with index 2 and event "drill.startDrill".
+     *
+     * @return 'true' if the edge was executed, 'false' otherwise.
+     */
+    execEdge2() {
+        var guard = ((spec.drill_) == (spec.specEnum._off)) && (((spec.r_B_) == (spec.specEnum._b)) && ((spec.r_C_) == (spec.specEnum._b)));
 
         if (!guard) {
             return false;
@@ -511,16 +498,329 @@ class spec_class {
         if (this.doInfoPrintOutput) this.printOutput(2, true);
         if (this.doInfoEvent) this.infoEvent(2, true);
 
-        if ((spec.washer_) == (spec.specEnum._ready)) {
-            spec.washer_ = spec.specEnum._ready;
-        } else if ((spec.washer_) == (spec.specEnum._washing90)) {
-            spec.washer_ = spec.specEnum._ready;
-        } else if ((spec.washer_) == (spec.specEnum._washing40)) {
-            spec.washer_ = spec.specEnum._ready;
-        }
+        spec.drill_ = spec.specEnum._on;
+        spec.r_B_x_ = true;
+        spec.r_C_ = spec.specEnum._d;
 
         if (this.doInfoEvent) this.infoEvent(2, false);
         if (this.doInfoPrintOutput) this.printOutput(2, false);
+        if (this.doStateOutput || this.doTransitionOutput) this.log('');
+        return true;
+    }
+
+    /**
+     * Execute code for edge with index 3 and event "drill.stopDrill".
+     *
+     * @return 'true' if the edge was executed, 'false' otherwise.
+     */
+    execEdge3() {
+        var guard = ((spec.drill_) == (spec.specEnum._on)) && (((spec.r_B_) == (spec.specEnum._b)) && ((spec.r_C_) == (spec.specEnum._d)));
+
+        if (!guard) {
+            return false;
+        }
+
+        if (this.doInfoPrintOutput) this.printOutput(3, true);
+        if (this.doInfoEvent) this.infoEvent(3, true);
+
+        spec.drill_ = spec.specEnum._off;
+        spec.r_B_x_ = false;
+        spec.r_C_ = spec.specEnum._b;
+
+        if (this.doInfoEvent) this.infoEvent(3, false);
+        if (this.doInfoPrintOutput) this.printOutput(3, false);
+        if (this.doStateOutput || this.doTransitionOutput) this.log('');
+        return true;
+    }
+
+    /**
+     * Execute code for edge with index 4 and event "machineHead.D2M".
+     *
+     * @return 'true' if the edge was executed, 'false' otherwise.
+     */
+    execEdge4() {
+        var guard = ((spec.machineHead_) == (spec.specEnum._opD)) && (((spec.r_B_) == (spec.specEnum._b)) && (!(spec.r_B_x_)));
+
+        if (!guard) {
+            return false;
+        }
+
+        if (this.doInfoPrintOutput) this.printOutput(4, true);
+        if (this.doInfoEvent) this.infoEvent(4, true);
+
+        spec.machineHead_ = spec.specEnum._opM;
+        spec.r_B_ = spec.specEnum._a;
+
+        if (this.doInfoEvent) this.infoEvent(4, false);
+        if (this.doInfoPrintOutput) this.printOutput(4, false);
+        if (this.doStateOutput || this.doTransitionOutput) this.log('');
+        return true;
+    }
+
+    /**
+     * Execute code for edge with index 5 and event "machineHead.D2P".
+     *
+     * @return 'true' if the edge was executed, 'false' otherwise.
+     */
+    execEdge5() {
+        var guard = ((spec.machineHead_) == (spec.specEnum._opD)) && (((spec.r_B_) == (spec.specEnum._b)) && (!(spec.r_B_x_)));
+
+        if (!guard) {
+            return false;
+        }
+
+        if (this.doInfoPrintOutput) this.printOutput(5, true);
+        if (this.doInfoEvent) this.infoEvent(5, true);
+
+        spec.machineHead_ = spec.specEnum._opP;
+        spec.r_B_ = spec.specEnum._c;
+
+        if (this.doInfoEvent) this.infoEvent(5, false);
+        if (this.doInfoPrintOutput) this.printOutput(5, false);
+        if (this.doStateOutput || this.doTransitionOutput) this.log('');
+        return true;
+    }
+
+    /**
+     * Execute code for edge with index 6 and event "machineHead.M2D".
+     *
+     * @return 'true' if the edge was executed, 'false' otherwise.
+     */
+    execEdge6() {
+        var guard = ((spec.machineHead_) == (spec.specEnum._opM)) && (((spec.r_B_) == (spec.specEnum._a)) && (!(spec.r_B_x_)));
+
+        if (!guard) {
+            return false;
+        }
+
+        if (this.doInfoPrintOutput) this.printOutput(6, true);
+        if (this.doInfoEvent) this.infoEvent(6, true);
+
+        spec.machineHead_ = spec.specEnum._opD;
+        spec.r_B_ = spec.specEnum._b;
+
+        if (this.doInfoEvent) this.infoEvent(6, false);
+        if (this.doInfoPrintOutput) this.printOutput(6, false);
+        if (this.doStateOutput || this.doTransitionOutput) this.log('');
+        return true;
+    }
+
+    /**
+     * Execute code for edge with index 7 and event "machineHead.M2P".
+     *
+     * @return 'true' if the edge was executed, 'false' otherwise.
+     */
+    execEdge7() {
+        var guard = ((spec.machineHead_) == (spec.specEnum._opM)) && (((spec.r_B_) == (spec.specEnum._a)) && (!(spec.r_B_x_)));
+
+        if (!guard) {
+            return false;
+        }
+
+        if (this.doInfoPrintOutput) this.printOutput(7, true);
+        if (this.doInfoEvent) this.infoEvent(7, true);
+
+        spec.machineHead_ = spec.specEnum._opP;
+        spec.r_B_ = spec.specEnum._c;
+
+        if (this.doInfoEvent) this.infoEvent(7, false);
+        if (this.doInfoPrintOutput) this.printOutput(7, false);
+        if (this.doStateOutput || this.doTransitionOutput) this.log('');
+        return true;
+    }
+
+    /**
+     * Execute code for edge with index 8 and event "machineHead.P2D".
+     *
+     * @return 'true' if the edge was executed, 'false' otherwise.
+     */
+    execEdge8() {
+        var guard = ((spec.machineHead_) == (spec.specEnum._opP)) && (((spec.r_B_) == (spec.specEnum._c)) && (!(spec.r_B_x_)));
+
+        if (!guard) {
+            return false;
+        }
+
+        if (this.doInfoPrintOutput) this.printOutput(8, true);
+        if (this.doInfoEvent) this.infoEvent(8, true);
+
+        spec.machineHead_ = spec.specEnum._opD;
+        spec.r_B_ = spec.specEnum._b;
+
+        if (this.doInfoEvent) this.infoEvent(8, false);
+        if (this.doInfoPrintOutput) this.printOutput(8, false);
+        if (this.doStateOutput || this.doTransitionOutput) this.log('');
+        return true;
+    }
+
+    /**
+     * Execute code for edge with index 9 and event "machineHead.P2M".
+     *
+     * @return 'true' if the edge was executed, 'false' otherwise.
+     */
+    execEdge9() {
+        var guard = ((spec.machineHead_) == (spec.specEnum._opP)) && (((spec.r_B_) == (spec.specEnum._c)) && (!(spec.r_B_x_)));
+
+        if (!guard) {
+            return false;
+        }
+
+        if (this.doInfoPrintOutput) this.printOutput(9, true);
+        if (this.doInfoEvent) this.infoEvent(9, true);
+
+        spec.machineHead_ = spec.specEnum._opM;
+        spec.r_B_ = spec.specEnum._a;
+
+        if (this.doInfoEvent) this.infoEvent(9, false);
+        if (this.doInfoPrintOutput) this.printOutput(9, false);
+        if (this.doStateOutput || this.doTransitionOutput) this.log('');
+        return true;
+    }
+
+    /**
+     * Execute code for edge with index 10 and event "machineStand.moveDown".
+     *
+     * @return 'true' if the edge was executed, 'false' otherwise.
+     */
+    execEdge10() {
+        var guard = ((spec.machineStand_) == (spec.specEnum._up)) && (((spec.r_A_) == (spec.specEnum._b)) && ((spec.r_C_) == (spec.specEnum._a)));
+
+        if (!guard) {
+            return false;
+        }
+
+        if (this.doInfoPrintOutput) this.printOutput(10, true);
+        if (this.doInfoEvent) this.infoEvent(10, true);
+
+        spec.machineStand_ = spec.specEnum._down;
+        spec.r_C_ = spec.specEnum._b;
+
+        if (this.doInfoEvent) this.infoEvent(10, false);
+        if (this.doInfoPrintOutput) this.printOutput(10, false);
+        if (this.doStateOutput || this.doTransitionOutput) this.log('');
+        return true;
+    }
+
+    /**
+     * Execute code for edge with index 11 and event "machineStand.moveUp".
+     *
+     * @return 'true' if the edge was executed, 'false' otherwise.
+     */
+    execEdge11() {
+        var guard = ((spec.machineStand_) == (spec.specEnum._down)) && ((spec.r_C_) == (spec.specEnum._b));
+
+        if (!guard) {
+            return false;
+        }
+
+        if (this.doInfoPrintOutput) this.printOutput(11, true);
+        if (this.doInfoEvent) this.infoEvent(11, true);
+
+        spec.machineStand_ = spec.specEnum._up;
+        spec.r_C_ = spec.specEnum._a;
+
+        if (this.doInfoEvent) this.infoEvent(11, false);
+        if (this.doInfoPrintOutput) this.printOutput(11, false);
+        if (this.doStateOutput || this.doTransitionOutput) this.log('');
+        return true;
+    }
+
+    /**
+     * Execute code for edge with index 12 and event "mill.startMill".
+     *
+     * @return 'true' if the edge was executed, 'false' otherwise.
+     */
+    execEdge12() {
+        var guard = ((spec.mill_) == (spec.specEnum._off)) && (((spec.r_B_) == (spec.specEnum._a)) && ((spec.r_C_) == (spec.specEnum._b)));
+
+        if (!guard) {
+            return false;
+        }
+
+        if (this.doInfoPrintOutput) this.printOutput(12, true);
+        if (this.doInfoEvent) this.infoEvent(12, true);
+
+        spec.mill_ = spec.specEnum._on;
+        spec.r_B_x_ = true;
+        spec.r_C_ = spec.specEnum._c;
+
+        if (this.doInfoEvent) this.infoEvent(12, false);
+        if (this.doInfoPrintOutput) this.printOutput(12, false);
+        if (this.doStateOutput || this.doTransitionOutput) this.log('');
+        return true;
+    }
+
+    /**
+     * Execute code for edge with index 13 and event "mill.stopMill".
+     *
+     * @return 'true' if the edge was executed, 'false' otherwise.
+     */
+    execEdge13() {
+        var guard = ((spec.mill_) == (spec.specEnum._on)) && (((spec.r_B_) == (spec.specEnum._a)) && ((spec.r_C_) == (spec.specEnum._c)));
+
+        if (!guard) {
+            return false;
+        }
+
+        if (this.doInfoPrintOutput) this.printOutput(13, true);
+        if (this.doInfoEvent) this.infoEvent(13, true);
+
+        spec.mill_ = spec.specEnum._off;
+        spec.r_B_x_ = false;
+        spec.r_C_ = spec.specEnum._b;
+
+        if (this.doInfoEvent) this.infoEvent(13, false);
+        if (this.doInfoPrintOutput) this.printOutput(13, false);
+        if (this.doStateOutput || this.doTransitionOutput) this.log('');
+        return true;
+    }
+
+    /**
+     * Execute code for edge with index 14 and event "polisher.startPolisher".
+     *
+     * @return 'true' if the edge was executed, 'false' otherwise.
+     */
+    execEdge14() {
+        var guard = ((spec.polisher_) == (spec.specEnum._off)) && (((spec.r_B_) == (spec.specEnum._c)) && ((spec.r_C_) == (spec.specEnum._b)));
+
+        if (!guard) {
+            return false;
+        }
+
+        if (this.doInfoPrintOutput) this.printOutput(14, true);
+        if (this.doInfoEvent) this.infoEvent(14, true);
+
+        spec.polisher_ = spec.specEnum._on;
+        spec.r_B_x_ = true;
+        spec.r_C_ = spec.specEnum._e;
+
+        if (this.doInfoEvent) this.infoEvent(14, false);
+        if (this.doInfoPrintOutput) this.printOutput(14, false);
+        if (this.doStateOutput || this.doTransitionOutput) this.log('');
+        return true;
+    }
+
+    /**
+     * Execute code for edge with index 15 and event "polisher.stopPolisher".
+     *
+     * @return 'true' if the edge was executed, 'false' otherwise.
+     */
+    execEdge15() {
+        var guard = ((spec.polisher_) == (spec.specEnum._on)) && (((spec.r_B_) == (spec.specEnum._c)) && ((spec.r_C_) == (spec.specEnum._e)));
+
+        if (!guard) {
+            return false;
+        }
+
+        if (this.doInfoPrintOutput) this.printOutput(15, true);
+        if (this.doInfoEvent) this.infoEvent(15, true);
+
+        spec.polisher_ = spec.specEnum._off;
+        spec.r_B_x_ = true;
+        spec.r_C_ = spec.specEnum._b;
+
+        if (this.doInfoEvent) this.infoEvent(15, false);
+        if (this.doInfoPrintOutput) this.printOutput(15, false);
         if (this.doStateOutput || this.doTransitionOutput) this.log('');
         return true;
     }
@@ -539,9 +839,16 @@ class spec_class {
         this.svgInEvent = -1;
 
         // CIF model state variables.
-        spec.coin_collector_coins_ = 0;
-        spec.detergent_dispenser_ = spec.specEnum._isEmpty;
-        spec.washer_ = spec.specEnum._ready;
+        spec.conveyor_ = spec.specEnum._noProduct;
+        spec.drill_ = spec.specEnum._off;
+        spec.machineHead_ = spec.specEnum._opD;
+        spec.machineStand_ = spec.specEnum._up;
+        spec.mill_ = spec.specEnum._off;
+        spec.polisher_ = spec.specEnum._off;
+        spec.r_A_ = spec.specEnum._a;
+        spec.r_B_x_ = false;
+        spec.r_B_ = spec.specEnum._b;
+        spec.r_C_ = spec.specEnum._a;
     }
 
     /**
@@ -588,7 +895,7 @@ class spec_class {
 
     /** Logs a normal message. */
     log(message) {
-        console.log(message);
+        //console.log(message);
 
     }
 
@@ -661,9 +968,16 @@ class spec_class {
      */
     getStateText() {
         var state = specUtils.fmt('time=%s', spec.time);
-        state += specUtils.fmt(', coin_collector.coins=%s', specUtils.valueToStr(spec.coin_collector_coins_));
-        state += specUtils.fmt(', detergent_dispenser=%s', specUtils.valueToStr(spec.detergent_dispenser_));
-        state += specUtils.fmt(', washer=%s', specUtils.valueToStr(spec.washer_));
+        state += specUtils.fmt(', conveyor=%s', specUtils.valueToStr(spec.conveyor_));
+        state += specUtils.fmt(', drill=%s', specUtils.valueToStr(spec.drill_));
+        state += specUtils.fmt(', machineHead=%s', specUtils.valueToStr(spec.machineHead_));
+        state += specUtils.fmt(', machineStand=%s', specUtils.valueToStr(spec.machineStand_));
+        state += specUtils.fmt(', mill=%s', specUtils.valueToStr(spec.mill_));
+        state += specUtils.fmt(', polisher=%s', specUtils.valueToStr(spec.polisher_));
+        state += specUtils.fmt(', r_A=%s', specUtils.valueToStr(spec.r_A_));
+        state += specUtils.fmt(', r_B=%s', specUtils.valueToStr(spec.r_B_));
+        state += specUtils.fmt(', r_B.x=%s', specUtils.valueToStr(spec.r_B_x_));
+        state += specUtils.fmt(', r_C=%s', specUtils.valueToStr(spec.r_C_));
         return state;
     }
 
