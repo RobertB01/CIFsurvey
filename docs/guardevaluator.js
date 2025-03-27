@@ -125,6 +125,10 @@ function updateGuardOverlay(edge, sourceAutomatonName) {
       }
     }
 
+    if (!rightLocation) {
+      guardDisplay = "- wrong location";
+    }
+    
     const overallCorrect = rightLocation && guardOk;
     if (!overallCorrect) {
       allGreen = false;
